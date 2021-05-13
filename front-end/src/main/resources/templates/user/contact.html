@@ -4,31 +4,29 @@
     <meta charset="UTF-8">
     <title>Contact</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="/css/user/contact.css" type="text/css" rel="stylesheet">
+
 </head>
-<body>
 <header>
     <!--=================== NAVIGATION ============================ --><!DOCTYPE html>
     <html lang="en" xmlns:th = "http://www.thymeleaf.org">
-    <head>
-        <meta charset="UTF-8">
-        <title>Contact</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    </head>
+
     <body>
     <header>
         <!--=================== NAVIGATION ============================ -->
-        <div th:replace="partials/navbar :: navigation">Navbar her</div>
+<!--        <div th:replace="partials/navbar :: navigation">Navbar her</div>-->
 
-        <div>
-            <!--=================== billede ============================ -->
-            <div class="Image" align="center">
-                <img class="img-responsive" src="https://media.istockphoto.com/photos/yellow-ginkgo-trees-on-road-lane-in-napa-valley-california-picture-id499046284?s=612x612"  style="">
-            </div>
-        </div>
+
     </header>
+
     <main class="container">
         <div align="center">
-
+            <div>
+                <!--=================== billede ============================ -->
+                <div align="center">
+                    <img class="image" src="/images/road.jpg" >
+                </div>
+            </div>
 
             <form class="contact w-75"   method="post">
 
@@ -61,6 +59,6 @@
         </div>
     </main>
     <!--=================== Footer ============================ -->
-    <div th:replace="partials/footer :: footerFragment">Footer her</div>
+<!--    <div th:replace="partials/footer :: footerFragment">Footer her</div>-->
     </body>
     </html>

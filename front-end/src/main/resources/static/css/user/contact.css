@@ -1,0 +1,7 @@
+.image{
+    height: 500px;
+    width: fit-content;
+    /*display: block;*/
+    margin-left: auto;
+    margin-right: auto;
+}
