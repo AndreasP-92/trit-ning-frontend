@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th = "http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body>
+<header>
+    <!--=================== NAVIGATION ============================ --><!DOCTYPE html>
+    <html lang="en" xmlns:th = "http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Contact</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    </head>
+    <body>
+    <header>
+        <!--=================== NAVIGATION ============================ -->
+        <div th:replace="partials/navbar :: navigation">Navbar her</div>
+
+        <div>
+            <!--=================== billede ============================ -->
+            <div class="Image" align="center">
+                <img class="img-responsive" src="https://media.istockphoto.com/photos/yellow-ginkgo-trees-on-road-lane-in-napa-valley-california-picture-id499046284?s=612x612"  style="">
+            </div>
+        </div>
+    </header>
+    <main class="container">
+        <div align="center">
+
+
+            <form class="contact w-75"   method="post">
+
+                <h3 class="Kontakt p-5" style="text-align: center">Kontakt</h3>
+
+                <p class="font-weight-normal" >
+
+
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                </p>
+
+                <div class="row">
+                    <div class="col ml-5 mr-5 pb-3 mt-5">
+                        <input placeholder="Fornavn" type="text" class="form-control" >
+                    </div>
+                    <div class="col ml-5 mr-5 pb-3 mt-5">
+                        <input placeholder="Efternavn" type="text" class="form-control" >
+                    </div>
+                </div>
+
+                <div class="form-group ml-5 mr-5">
+                    <input placeholder="Email" name="" type="email" required class="form-control">
+                </div>
+                <div class="form-group ml-5 mr-5">
+                    <textarea placeholder="Besked" name="" required class="form-control"></textarea>
+                </div>
+                <!--=================== Submit button ============================ -->
+                <button class=" btn btn-success ml-5 mr-5" name="submit" type="submit" id="contact-submit" data-submit="...Sending">Send</button>
+            </form>
+        </div>
+    </main>
+    <!--=================== Footer ============================ -->
+    <div th:replace="partials/footer :: footerFragment">Footer her</div>
+    </body>
+    </html>

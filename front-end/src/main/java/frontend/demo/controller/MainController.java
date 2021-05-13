@@ -11,4 +11,10 @@ public class MainController {
 
         return "user/index";
     }
+
+    @GetMapping("/contact")
+    public String contact(){
+
+        return "user/contact";
+    }
 }
