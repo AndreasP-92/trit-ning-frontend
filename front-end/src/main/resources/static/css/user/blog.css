@@ -4,7 +4,7 @@
 }
 .center{
     height: 500px;
-    width: fit-content;
+    width: auto;
     display: block;
     margin-left: auto;
     margin-right: auto;
