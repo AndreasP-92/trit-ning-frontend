@@ -1,0 +1,21 @@
+.blogpost img{
+    height: 250px;
+    width: 250px;
+}
+.center{
+    height: 500px;
+    width: fit-content;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+p{
+    font-family: "Comic Sans MS";
+    margin-bottom: 30px;
+}
+.title{
+    font-family: "Comic Sans MS";
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
