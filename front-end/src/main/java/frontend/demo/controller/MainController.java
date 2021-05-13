@@ -7,8 +7,20 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class MainController {
 
     @GetMapping("/")
-    public String index(){
+    public String index() {
 
         return "user/index";
+    }
+
+    @GetMapping("/contact")
+    public String contact(){
+
+        return "user/contact";
+    }
+
+    @GetMapping("/activityswim")
+    public String activityswim() {
+
+        return "user/activityswim";
     }
 }
