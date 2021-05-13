@@ -9,6 +9,6 @@ public class Main {
     @GetMapping("/")
     public String index(){
 
-        return "index";
+        return "user/index";
     }
 }
