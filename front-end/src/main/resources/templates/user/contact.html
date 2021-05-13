@@ -8,17 +8,12 @@
 
 </head>
 <header>
-    <!--=================== NAVIGATION ============================ --><!DOCTYPE html>
-    <html lang="en" xmlns:th = "http://www.thymeleaf.org">
+    <!--=================== NAVIGATION ============================ -->
+            <div th:replace="fragments/navigation :: navigation">
 
-    <body>
-    <header>
-        <!--=================== NAVIGATION ============================ -->
-<!--        <div th:replace="partials/navbar :: navigation">Navbar her</div>-->
-
-
+            </div>
     </header>
-
+<body>
     <main class="container">
         <div align="center">
             <div>
@@ -39,10 +34,10 @@
                 </p>
 
                 <div class="row">
-                    <div class="col ml-5 mr-5 pb-3 mt-5">
+                    <div class="col ml-5 mr-1 pb-3 mt-5">
                         <input placeholder="Fornavn" type="text" class="form-control" >
                     </div>
-                    <div class="col ml-5 mr-5 pb-3 mt-5">
+                    <div class="col ml-1 mr-5 pb-3 mt-5">
                         <input placeholder="Efternavn" type="text" class="form-control" >
                     </div>
                 </div>
