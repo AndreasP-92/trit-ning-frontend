@@ -11,4 +11,10 @@ public class MainController {
 
         return "user/index";
     }
+
+    @GetMapping("/blog")
+    public String blog(){
+
+        return "user/blog";
+    }
 }
