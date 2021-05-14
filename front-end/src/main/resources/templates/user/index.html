@@ -3,11 +3,13 @@
 
 <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-
+    <script src="https://kit.fontawesome.com/b6a1220657.js" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <title>Tritræning Forside</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link href="/css/user/index.css" type="text/css" rel="stylesheet">
+    <link href="/css/user/fragments.css" type="text/css" rel="stylesheet">
+
 </head>
 <body>
 <header>
@@ -20,6 +22,17 @@
 
 
     <!--=================== TOP IMG ============================ -->
+    <div class="topImg" align="center">
+        <div class="row w-100">
+            <div class="img-fill" align="center">
+                <img src="/images/kimbanner.png">
+            </div>
+
+        </div>
+    </div>
+<!--    <div class="topImg">-->
+<!--    <img src="/images/road.jpg" style="">-->
+<!--    </div>-->
 
     <!--=================== QUOTES ============================ -->
 
@@ -66,7 +79,7 @@
 
             <div class="col-sm">
                 <img src="/images/logos/time.png">
-                <p>Certificeret Coach</p>
+                <p>Polaroids</p>
             </div>
             <h1></h1>
 
@@ -79,10 +92,12 @@
         <div class="row w-50">
 
             <div class="col-sm">
-                <img src="/images/logos/time.png">
-                <p>Jesper</p>
-                <p>Lorem ipsum dolor sit amet</p>
+                <img src="/images/ulla.png">
+                <p>Ulla Engell</p>
+                <p>"Kim har en stor ære i, at jeg nu synes, at svømning er sjovt  Med sine store pædagogiske evner, har Kim tålmodigt lært mig at svømme hurtigere. Jeg vil fortsætte med bede Kim om hjælp til forbedre min svømning  Jeg kan absolut anbefale Kim, hvis du har brug for en træner - ikke kun til svømning men til triatlon generelt."</p>
             </div>
+
+
             <h1></h1>
             <div class="col-sm">
                 <img src="/images/logos/checkmark.png">
@@ -101,6 +116,7 @@
 
 </main>
 
+<div th:replace="fragments/footer :: footerFragment"></div>
 
 </body>
 </html>
