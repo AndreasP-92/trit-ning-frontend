@@ -1,8 +1,17 @@
-.image{
-    height: 500px;
-    width: fit-content;
-    /*display: block;*/
-    margin-left: auto;
-    margin-right: auto;
+.image {
+  height: 500px;
+  width: fit-content;
+  /*display: block;*/
+  margin-left: auto;
+  margin-right: auto;
 }
 
+.contacttext {
+  font-family: "Comic Sans MS";
+}
+
+.kontakt {
+  font-family: "Comic Sans MS";
+}
+
+/*# sourceMappingURL=contact.css.map */
