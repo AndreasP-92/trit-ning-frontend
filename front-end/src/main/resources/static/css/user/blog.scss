@@ -1,0 +1,32 @@
+.bannerImg{
+  width: 100%;
+}
+
+.blogMain{
+
+  .blogpost{
+    img{
+      width: 100%;
+    }
+  }
+
+  .blogtext{
+    div{
+      margin-bottom: 50px;
+    }
+    p{
+      font-family: "Comic Sans MS";
+      margin-bottom: 0px!important;
+      padding-right: 100%;
+      width: 100%;
+      white-space:nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+  .title{
+    font-family: "Comic Sans MS";
+    margin-top: 50px;
+    margin-bottom: 100px;
+  }
+}
