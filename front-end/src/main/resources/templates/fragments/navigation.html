@@ -1,37 +1,39 @@
 <html xmlns:th = "http://www.thymeleaf.org">
+<nav th:fragment="navigation" class="navbar navbar-expand-lg sticky navbar-dark" style="">
 
-<nav th:fragment="navigation" class="navbar navbar-transparent navbar-expand-lg" style="background-color:#8196a142 ">
-    <div class="d-flex w-50 order-0">
-        <a class="navbar-brand mr-1" href="/"><img src="/images/logo.png" style="width:35%;"/></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-    </div>
-    <div class="navbar-collapse collapse justify-content-center order-2" id="collapsingNavbar">
-        <ul class="navbar-nav">
+
+    <a class="navbar-brand" href="#"><img src="/images/logo.png" style="width:35%;"/></a>
+    <button class="navbar-toggler" type="button" style="color:black;" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon">
+             <i class="fa fa-navicon" style="color:#fff; font-size:28px;"></i>
+        </span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto ">
             <li class="nav-item ml-5 mr-5">
-                <a class="nav-link text-truncate text-white" href="/">Forside</a>
+                <a class="nav-link text-truncate" href="/">Forside</a>
             </li>
             <li class="nav-item ml-4 ml-5 mr-5">
-                <a class="nav-link text-truncate text-white" href="/booking">Svøm</a>
+                <a class="nav-link text-truncate" href="/booking">Svøm</a>
             </li>
             <li class="nav-item ml-4 ml-5 mr-5">
-                <a class="nav-link text-truncate text-white" href="/contact">Cykel</a>
+                <a class="nav-link text-truncate" href="/contact">Cykel</a>
             </li>
             <li class="nav-item ml-4 ml-5 mr-5">
-                <a class="nav-link text-truncate text-white" href="/contact">Løb</a>
+                <a class="nav-link text-truncate" href="/contact">Løb</a>
             </li>
             <li class="nav-item ml-4 ml-5 mr-5">
-                <a class="nav-link text-truncate text-white" href="/contact">TRX</a>
+                <a class="nav-link text-truncate" href="/contact">TRX</a>
             </li>
             <li class="nav-item ml-4 ml-5 mr-5">
-                <a class="nav-link text-truncate text-white" href="/contact">Blog</a>
+                <a class="nav-link text-truncate" href="/contact">Blog</a>
             </li>
             <li class="nav-item ml-4 ml-5 mr-5">
-                <a class="nav-link text-truncate text-white" href="/contact">Om Mig</a>
+                <a class="nav-link text-truncate" href="/contact">Om Mig</a>
             </li>
             <li class="nav-item ml-4 ml-5 mr-5">
-                <a class="nav-link text-truncate text-white" href="/contact">Kontakt</a>
+                <a class="nav-link text-truncate" href="/contact">Kontakt</a>
             </li>
         </ul>
     </div>
