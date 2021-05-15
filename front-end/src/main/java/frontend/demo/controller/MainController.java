@@ -17,4 +17,10 @@ public class MainController {
 
         return "user/blog";
     }
+
+    @GetMapping("/editpage")
+    public String editPage(){
+
+        return "admin/editPage";
+    }
 }
