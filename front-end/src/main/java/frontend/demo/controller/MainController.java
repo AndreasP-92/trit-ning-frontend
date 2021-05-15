@@ -23,4 +23,22 @@ public class MainController {
 
         return "user/activityswim";
     }
+
+    @GetMapping("/activitycycle")
+    public String activitycycle() {
+
+        return "user/activitycycle";
+    }
+
+    @GetMapping("/activityrun")
+    public String activityrun() {
+
+        return "user/activityrun";
+    }
+
+    @GetMapping("/activitytrx")
+    public String activitytrx() {
+
+        return "user/activitytrx";
+    }
 }

@@ -30,4 +30,22 @@ figcaption {
 .swimimage{
     position: absolute;
     width: 10%;
+    height: 30%;
+}
+
+.trximage{
+    position: absolute;
+    width: 10%;
+    height: 30%;
+}
+
+.cycleimage{
+    position: absolute;
+    width: 10%;
+}
+
+.runimage{
+    position: absolute;
+    width: 10%;
+    height: 30%;
 }
