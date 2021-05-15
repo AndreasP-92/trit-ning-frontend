@@ -12,6 +12,7 @@ figure {
     padding: 8px;
     box-sizing: border-box;
     background-color: #f7fcf5;
+    height: 40%;
 }
 figcaption {
     text-align: center;
@@ -26,3 +27,7 @@ figcaption {
     font-family: "Comic Sans MS";
 }
 
+.swimimage{
+    position: absolute;
+    width: 10%;
+}
