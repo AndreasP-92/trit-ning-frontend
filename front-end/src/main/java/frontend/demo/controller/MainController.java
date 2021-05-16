@@ -23,4 +23,10 @@ public class MainController {
 
         return "user/activityswim";
     }
+
+    @GetMapping("/about")
+    public String about() {
+
+        return "user/about";
+    }
 }
