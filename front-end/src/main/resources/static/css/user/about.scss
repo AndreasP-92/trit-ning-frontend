@@ -4,20 +4,19 @@
 
 .aboutMain{
 
-  .abouttext{
-    div{
-      margin-bottom: 50px;
-    }
-    p{
-      font-family: "Comic Sans MS";
-      margin-bottom: 0px!important;
-      width: 100%;
+  .aboutImg{
+      width: 30%;
+  }
 
-    }
+  .about{
+    font-family: "Comic Sans MS"!important;
   }
   .title{
     font-family: "Comic Sans MS";
     margin-top: 50px;
     margin-bottom: 100px;
+  }
+  h3{
+    margin-bottom: 20px
   }
 }

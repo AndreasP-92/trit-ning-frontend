@@ -2,9 +2,8 @@
   width: 100%;
 }
 
-.blogMain .aboutImg img {
+.blogMain .blogpost img {
   width: 100%;
-  float: right !important;
 }
 .blogMain .blogtext div {
   margin-bottom: 50px;
