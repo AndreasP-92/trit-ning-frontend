@@ -1,27 +1,92 @@
-.principles{
-    background-color: white;
-    padding-top: 5%;
-    padding-bottom: 5%;
-    color:black;
+.indexPage .frontPage {
+  font-family: "Comic Sans MS";
+}
+.indexPage .principles {
+  background-color: white;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  color: black;
+  font-family: "Comic Sans MS";
+}
+.indexPage .principles img {
+  width: 30%;
+}
+.indexPage .polaroid {
+  background-color: #21f322 !important;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  color: black;
+  margin-bottom: -5%;
+}
+.indexPage .polaroid .pol1 {
+  position: absolute;
+  transform: rotate(355deg);
+  left: 30%;
+}
+.indexPage .pol2 {
+  position: relative;
+  left: 28%;
+  transform: rotate(360deg);
+  bottom: -15px;
+}
+.indexPage .pol3 {
+  position: relative;
+  left: 26%;
+}
+.indexPage .pol4 {
+  position: relative;
+  left: 22%;
+  transform: rotate(10deg);
+  bottom: -20px;
+}
+.indexPage .pol5 {
+  position: relative;
+  transform: rotate(355deg);
+  bottom: -130px;
+  right: 44%;
+}
+.indexPage .pol6 {
+  position: relative;
+  transform: rotate(360deg);
+  bottom: 131px;
+  right: -37%;
+}
+.indexPage .pol7 {
+  position: relative;
+  transform: rotate(5deg);
+  bottom: 127px;
+  right: -35%;
 }
 
-.principles img{
-    width:30%;
+.statements {
+  background-color: white;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  color: black;
+  font-family: "Comic Sans MS";
 }
 
-.polaroid{
-    background-color: #21f322;
-    padding-top: 5%;
-    padding-bottom: 5%;
-    color:black;
+.h1, h1 {
+  font-size: 2.5rem;
+  padding-top: 25px;
 }
 
-.statements{
-    background-color: white;
-    padding-top: 5%;
-    padding-bottom: 5%;
-    color:black;
+p {
+  margin-top: 15px;
+  margin-bottom: 1rem;
 }
 
+figure {
+  width: 175px;
+  margin: 8px 0;
+  border: 1px solid #777;
+  padding: 8px;
+  box-sizing: border-box;
+  background-color: #f7fcf5;
+}
+figure figcaption {
+  text-align: center;
+  padding: 8px 4px;
+}
 
-
+/*# sourceMappingURL=index.css.map */
