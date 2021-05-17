@@ -18,4 +18,46 @@ public class MainController {
 
         return "/admin/edit";
     }
+
+    @GetMapping("/blog")
+    public String blog(){
+
+        return "user/blog";
+    }
+
+    @GetMapping("/contact")
+    public String contact(){
+
+        return "user/contact";
+    }
+
+    @GetMapping("/activityswim")
+    public String activityswim() {
+
+        return "user/activityswim";
+    }
+
+    @GetMapping("/about")
+    public String about() {
+
+        return "user/about";
+    }
+
+    @GetMapping("/activitycycle")
+    public String activitycycle() {
+
+        return "user/activitycycle";
+    }
+
+    @GetMapping("/activityrun")
+    public String activityrun() {
+
+        return "user/activityrun";
+    }
+
+    @GetMapping("/activitytrx")
+    public String activitytrx() {
+
+        return "user/activitytrx";
+    }
 }

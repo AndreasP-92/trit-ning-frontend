@@ -1,0 +1,26 @@
+.bannerImg {
+  width: 100%;
+}
+
+.blogMain .blogpost img {
+  width: 100%;
+}
+.blogMain .blogtext div {
+  margin-bottom: 50px;
+}
+.blogMain .blogtext p {
+  font-family: "Comic Sans MS";
+  margin-bottom: 0px !important;
+  padding-right: 100%;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.blogMain .title {
+  font-family: "Comic Sans MS";
+  margin-top: 50px;
+  margin-bottom: 100px;
+}
+
+/*# sourceMappingURL=blog.css.map */
