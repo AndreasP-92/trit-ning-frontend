@@ -11,4 +11,11 @@ public class MainController {
 
         return "user/index";
     }
+
+    //------------------ ADMIN EDIT -------------------
+    @GetMapping("/admin/edit")
+    public String adminEdit(){
+
+        return "/admin/edit";
+    }
 }
