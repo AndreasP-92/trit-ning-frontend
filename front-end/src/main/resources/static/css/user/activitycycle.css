@@ -6,7 +6,7 @@
     margin-right: auto;
 }
 figure {
-    width: 175px;
+    width: 170px;
     margin: 8px 0;
     border: 1px solid #777;
     padding: 8px;
@@ -27,25 +27,7 @@ figcaption {
     font-family: "Comic Sans MS";
 }
 
-/*.swimimage{*/
-/*    position: absolute;*/
-/*    width: 10%;*/
-/*    height: 30%;*/
-/*}*/
-
-/*.trximage{*/
-/*    position: absolute;*/
-/*    width: 10%;*/
-/*    height: 30%;*/
-/*}*/
-
 .cycleimage{
     position: absolute;
     width: 10%;
 }
-
-/*.runimage{*/
-/*    position: absolute;*/
-/*    width: 10%;*/
-/*    height: 30%;*/
-/*}*/
