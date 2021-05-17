@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class MainController {
 
     @GetMapping("/")
-    public String index(){
+    public String index() {
 
         return "user/index";
     }
@@ -34,5 +34,23 @@ public class MainController {
     public String about() {
 
         return "user/about";
+    }
+
+    @GetMapping("/activitycycle")
+    public String activitycycle() {
+
+        return "user/activitycycle";
+    }
+
+    @GetMapping("/activityrun")
+    public String activityrun() {
+
+        return "user/activityrun";
+    }
+
+    @GetMapping("/activitytrx")
+    public String activitytrx() {
+
+        return "user/activitytrx";
     }
 }
