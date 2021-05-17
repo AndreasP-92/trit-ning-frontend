@@ -11,9 +11,11 @@
 .blogMain .blogtext p {
   font-family: "Comic Sans MS";
   margin-bottom: 0px !important;
-  white-space: nowrap !important;
-  overflow: hidden !important;
-  text-overflow: ellipsis !important;
+  padding-right: 100%;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .blogMain .title {
   font-family: "Comic Sans MS";

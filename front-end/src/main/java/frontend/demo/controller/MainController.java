@@ -18,9 +18,21 @@ public class MainController {
         return "user/blog";
     }
 
-    @GetMapping("/editpage")
-    public String editPage(){
+    @GetMapping("/contact")
+    public String contact(){
 
-        return "admin/editPage";
+        return "user/contact";
+    }
+
+    @GetMapping("/activityswim")
+    public String activityswim() {
+
+        return "user/activityswim";
+    }
+
+    @GetMapping("/about")
+    public String about() {
+
+        return "user/about";
     }
 }
