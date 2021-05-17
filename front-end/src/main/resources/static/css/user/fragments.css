@@ -1,5 +1,36 @@
-.footer .socialIcons {
-  background-color: purple;
+nav {
+  background-color: #404148ab;
+  position: absolute !important;
+  top: 0px;
+  width: 100%;
+}
+nav a {
+  font-size: 20px;
+  color: white !important;
+}
+
+.footer {
+  background-color: #0b27f2;
+  height: 250px;
+  margin: 0px;
+  width: 100%;
+  padding-top: 25px;
+}
+.footer .contactBtn {
+  height: 40px;
+}
+.footer .socialIcons i {
+  color: #ffffff;
+  font-size: 48px;
+}
+.footer .buttonFooter {
+  color: white;
+}
+
+@media screen and (max-width: 960px) {
+  nav ul {
+    text-align: center;
+  }
 }
 
 /*# sourceMappingURL=fragments.css.map */
