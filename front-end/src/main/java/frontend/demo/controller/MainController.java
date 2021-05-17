@@ -60,4 +60,11 @@ public class MainController {
 
         return "user/activitytrx";
     }
+
+
+    @GetMapping("/admin/login")
+    public String login(){
+
+        return "user/login";
+    }
 }
