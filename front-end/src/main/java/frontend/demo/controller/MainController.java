@@ -73,4 +73,10 @@ public class MainController {
 
         return "admin/editPage";
     }
+
+    @GetMapping("/admin/create/activity")
+    public String adminCreateActivity(){
+
+        return "admin/createActivity";
+    }
 }
