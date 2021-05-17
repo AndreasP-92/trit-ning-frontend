@@ -1,6 +1,6 @@
 .image{
     height: 500px;
-    width: auto;
+    width: 100%;
     /*display: block;*/
     margin-left: auto;
     margin-right: auto;
@@ -27,25 +27,25 @@ figcaption {
     font-family: "Comic Sans MS";
 }
 
-.swimimage{
-    position: absolute;
-    width: 10%;
-    height: 30%;
-}
+/*.swimimage{*/
+/*    position: absolute;*/
+/*    width: 10%;*/
+/*    height: 30%;*/
+/*}*/
 
-.trximage{
-    position: absolute;
-    width: 10%;
-    height: 30%;
-}
+/*.trximage{*/
+/*    position: absolute;*/
+/*    width: 10%;*/
+/*    height: 30%;*/
+/*}*/
 
 .cycleimage{
     position: absolute;
     width: 10%;
 }
 
-.runimage{
-    position: absolute;
-    width: 10%;
-    height: 30%;
-}
+/*.runimage{*/
+/*    position: absolute;*/
+/*    width: 10%;*/
+/*    height: 30%;*/
+/*}*/
