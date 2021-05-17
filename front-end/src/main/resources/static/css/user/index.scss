@@ -1,5 +1,12 @@
 .indexPage{
 
+  #banner01{
+    display:block;
+    width:100%;
+  }
+  #banner02{
+    display:none;
+  }
   .frontPage{
 
     font-family: "Comic Sans MS";
@@ -48,7 +55,7 @@
       position: relative;
       transform: rotate(355deg);
       bottom: -130px;
-      right: 44%;
+      right: 51%;
     }
   .pol6{
     position: relative;
@@ -105,8 +112,12 @@
   }
   .indexPage{
     .img-fill{
-      img{
-        width:100%;
+      #banner01{
+        display:none;
+      }
+      #banner02{
+      display:block;
+        width: 100%;
       }
     }
   }

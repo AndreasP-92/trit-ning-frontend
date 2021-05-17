@@ -1,3 +1,10 @@
+.indexPage #banner01 {
+  display: block;
+  width: 100%;
+}
+.indexPage #banner02 {
+  display: none;
+}
 .indexPage .frontPage {
   font-family: "Comic Sans MS";
 }
@@ -43,7 +50,7 @@
   position: relative;
   transform: rotate(355deg);
   bottom: -130px;
-  right: 44%;
+  right: 51%;
 }
 .indexPage .pol6 {
   position: relative;
@@ -98,7 +105,11 @@ figure figcaption {
     padding: 0px !important;
   }
 
-  .indexPage .img-fill img {
+  .indexPage .img-fill #banner01 {
+    display: none;
+  }
+  .indexPage .img-fill #banner02 {
+    display: block;
     width: 100%;
   }
 }
