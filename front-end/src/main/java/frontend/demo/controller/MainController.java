@@ -17,4 +17,28 @@ public class MainController {
 
         return "user/contact";
     }
+
+    @GetMapping("/activityswim")
+    public String activityswim() {
+
+        return "user/activityswim";
+    }
+
+    @GetMapping("/activitycycle")
+    public String activitycycle() {
+
+        return "user/activitycycle";
+    }
+
+    @GetMapping("/activityrun")
+    public String activityrun() {
+
+        return "user/activityrun";
+    }
+
+    @GetMapping("/activitytrx")
+    public String activitytrx() {
+
+        return "user/activitytrx";
+    }
 }
