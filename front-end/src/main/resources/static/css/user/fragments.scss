@@ -1,6 +1,6 @@
 $linkColor: blue;
 
-nav{
+.navbar{
   background-color:#404148ab;
   position: absolute!important;
   top:0px;
@@ -12,6 +12,17 @@ nav{
       }
 
 }
+.loginPage{
+  height:1048px;
+}
+
+.adminNavbar{
+  background-color:#404148ab;
+  a{
+    font-size:20px;
+    color:black!important;
+  }
+}
 
 .footer{
   background-color: #0b27f2;
@@ -19,6 +30,8 @@ nav{
   margin:           0px;
   width:            100%;
   padding-top:      25px;
+  position: sticky;
+  top:95%;
 
   .contactBtn{
     height: 40px;
