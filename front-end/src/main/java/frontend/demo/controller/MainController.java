@@ -19,12 +19,6 @@ public class MainController {
         return "/admin/edit";
     }
 
-    @GetMapping("/admin/edit/Page")
-    public String adminEditPage(){
-
-        return "/admin/editPage";
-    }
-
     @GetMapping("/blog")
     public String blog(){
 
@@ -72,5 +66,17 @@ public class MainController {
     public String login(){
 
         return "user/login";
+    }
+
+    @GetMapping("/admin/edit/page")
+    public String adminEditPage(){
+
+        return "admin/editPage";
+    }
+
+    @GetMapping("/admin/create/activity")
+    public String adminCreateActivity(){
+
+        return "admin/createActivity";
     }
 }
