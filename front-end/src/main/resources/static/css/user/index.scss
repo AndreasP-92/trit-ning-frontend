@@ -1,5 +1,12 @@
 .indexPage{
 
+  #banner01{
+    display:block;
+    width:100%;
+  }
+  #banner02{
+    display:none;
+  }
   .frontPage{
 
     font-family: "Comic Sans MS";
@@ -27,29 +34,29 @@
       transform: rotate(355deg);
       left:30%;
     }
-    }
-    .pol2{
-      position: relative;
-      left: 28%;
-      transform: rotate(360deg);
-      bottom: -15px;
-    }
-    .pol3{
-      position: relative;
-      left:26%;
-    }
-    .pol4{
-      position: relative;
-      left: 22%;
-      transform: rotate(10deg);
-      bottom: -20px;
-    }
-    .pol5{
-      position: relative;
-      transform: rotate(355deg);
-      bottom: -130px;
-      right: 44%;
-    }
+  }
+  .pol2{
+    position: relative;
+    left: 28%;
+    transform: rotate(360deg);
+    bottom: -15px;
+  }
+  .pol3{
+    position: relative;
+    left:26%;
+  }
+  .pol4{
+    position: relative;
+    left: 22%;
+    transform: rotate(10deg);
+    bottom: -20px;
+  }
+  .pol5{
+    position: relative;
+    transform: rotate(355deg);
+    bottom: -130px;
+    right: 51%;
+  }
   .pol6{
     position: relative;
     transform: rotate(360deg);
@@ -63,38 +70,56 @@
     right: -35%;
 
   }
+}
+
+.statements{
+  background-color: white;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  color:black;
+  font-family: "Comic Sans MS";
+  #more {display: none;}
+}
+.h1, h1 {
+  font-size: 2.5rem;
+  padding-top: 25px;
+}
+
+p {
+  margin-top: 15px;
+  margin-bottom: 1rem;
+}
+
+figure{
+  width: 175px;
+  margin: 8px 0;
+  border: 1px solid #777;
+  padding: 8px;
+  box-sizing: border-box;
+  background-color: #f7fcf5;
+
+  figcaption{
+    text-align: center;
+    padding: 8px 4px;
+  }
+
+}
+
+@media screen and (max-width: 960px) {
+  .container{
+    margin:0px!important;
+    padding: 0px!important;
+  }
+  .indexPage{
+    .img-fill{
+      #banner01{
+        display:none;
+      }
+      #banner02{
+        display:block;
+        width: 100%;
+      }
     }
-
-  .statements{
-    background-color: white;
-    padding-top: 5%;
-    padding-bottom: 5%;
-    color:black;
-    font-family: "Comic Sans MS";
-    #more {display: none;}
   }
-  .h1, h1 {
-    font-size: 2.5rem;
-    padding-top: 25px;
-  }
-
-  p {
-    margin-top: 15px;
-    margin-bottom: 1rem;
-  }
-
-  figure{
-    width: 175px;
-    margin: 8px 0;
-    border: 1px solid #777;
-    padding: 8px;
-    box-sizing: border-box;
-    background-color: #f7fcf5;
-
-    figcaption{
-      text-align: center;
-      padding: 8px 4px;
-    }
-
-  }
+}
 

@@ -2,17 +2,18 @@
 <html xmlns:th = "http://www.thymeleaf.org">
 
 <head>
-<!--    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>-->
+    <!--    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/b6a1220657.js" crossorigin="anonymous"></script>
-<!--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">-->
-    <meta charset="UTF-8">
+    <!--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">-->
+    <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1.0">
+
     <title>Tritræning Forside</title>
-<!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">-->
-    <link href="/css/user/index.css" type="text/css" rel="stylesheet">
+    <!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">-->
+    <link href="/css/user/index.css" type="text/css" rel="stylesheet" >
     <link href="/css/user/fragments.css" type="text/css" rel="stylesheet">
 </head>
 <body>
@@ -27,23 +28,25 @@
 
     <!--=================== TOP IMG ============================ -->
     <div class="topImg" align="center">
-        <div class="row w-100">
+        <div class="w-100">
             <div class="img-fill" align="center">
-                <img src="/images/kimbanner.png">
+                <img id="banner01" src="/images/kimbanner.png">
+                <img id="banner02" src="/images/kimbanner02.jpg">
+
             </div>
 
         </div>
     </div>
-<!--    <div class="topImg">-->
-<!--    <img src="/images/road.jpg" style="">-->
-<!--    </div>-->
+    <!--    <div class="topImg">-->
+    <!--    <img src="/images/road.jpg" style="">-->
+    <!--    </div>-->
 
     <!--=================== QUOTES ============================ -->
 
     <div class="frontPage" align="center" style="">
         <h1 style="margin-bottom: 5%">Træning med nærvær</h1>
         <div class="row w-75 frontPage">
-            <h4> "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat."</h4>
+            <h4> "Det betyder meget for mig, at atleten føler sig tryg, og kan komme i kontakt med mig, og få svar på spørgsmål, når der er et behov for det"</h4>
             <!--            FIRST ROW -->
 
         </div>
@@ -55,7 +58,7 @@
         <div class="row w-50">
 
             <div class="col-sm">
-                <i class="fas fa-certificate fa-3x"></i>
+                <i class="fas fa-award fa-3x"></i>
                 <p>Certificeret Coach</p>
             </div>
             <h1></h1>
@@ -147,9 +150,9 @@
             <h1></h1>
             <div class="col-sm">
                 <figure>
-                <img src="/images/ulla.png">
+                    <img src="/images/ulla.png">
                     <figcaption>
-                <p>Casper</p>
+                        <p>Casper</p>
                     </figcaption>
                 </figure>
                 <p>"Kim har en stor ære i, at jeg nu synes, at svømning er sjovt  Med sine store pædagogiske evner, har Kim tålmodigt lært mig at svømme hurtigere. Jeg vil fortsætte med bede Kim om hjælp til forbedre min svømning  Jeg kan absolut anbefale Kim, hvis du har brug for en træner - ikke kun til svømning men til triatlon generelt."</p>
