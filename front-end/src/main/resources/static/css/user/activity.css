@@ -1,36 +1,21 @@
 .image{
     width: 100%;
 }
-figure {
-    width: 40%;
-    border: 1px solid #777777;
-    padding: 2% 1% 10% 1%; //top right bottom left
-box-sizing: border-box;
-    background-color: #f7fcf5;
-}
 
-figcaption {
-    text-align: center;
-    padding: 8px 4px;
-}
-
-.abouttext{
+.activitytext{
     font-family: "Comic Sans MS";
 }
 
-.cykling{
+.activityTitle{
     font-family: "Comic Sans MS";
 }
 
 .swimimage{
-    position: absolute;
-    width: 10%;
+    width: 100%;
 }
 
 .trximage{
-    position: absolute;
-    width: 10%;
-    height: 32%;
+    width: 100%;
 }
 
 .cycleimage{
@@ -38,14 +23,16 @@ figcaption {
 }
 
 .runimage{
-    position: absolute;
-    width: 10%;
-    height: 30%;
+    width: 100%;
 }
 
 @media screen and (max-width: 960px) {
     .activityimage{
         margin-top: 27%;
+    }
+
+    .imageactivity{
+        margin-bottom: 5%;
     }
 
 }
