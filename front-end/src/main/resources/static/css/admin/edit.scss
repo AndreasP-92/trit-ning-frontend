@@ -1,13 +1,10 @@
-body{
-  background-repeat: no-repeat, repeat;
-  background-position: center;
-  background-color: white;
+.container{
+  margin-top:4%;
 }
 
-.container{
-  background: rgba(255, 255, 255, 0.85);;
-  display: block;
-  margin:10% auto;
+.fas{
+  margin-top: 5%;
+  margin-left: 5%;
 }
 
 @media only screen and (max-width: 960px) {
