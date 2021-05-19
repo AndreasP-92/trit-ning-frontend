@@ -11,3 +11,17 @@
 .kontakt{
   font-family: "Comic Sans MS";
 }
+
+@media screen and (max-width: 960px) {
+
+  .mobileInput{
+    display: block!important;
+  }
+  .desktopInput{
+    display: none!important;
+  }
+
+  .image{
+    margin-top: 30%;
+  }
+}
