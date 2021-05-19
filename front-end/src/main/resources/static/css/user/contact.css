@@ -1,7 +1,5 @@
 .image {
-  height: 500px;
-  width: fit-content;
-  /*display: block;*/
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
