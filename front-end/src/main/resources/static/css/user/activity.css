@@ -1,52 +1,39 @@
 .image{
-    /*height: 500px;*/
     width: 100%;
-    /*display: block;*/
-    margin-left: auto;
-    margin-right: auto;
-}
-figure {
-    width: 170px;
-    margin: 8px 0;
-    border: 1px solid #777;
-    padding: 8px;
-    box-sizing: border-box;
-    background-color: #f7fcf5;
-    /*height: 40%;*/
-}
-figcaption {
-    text-align: center;
-    padding: 8px 4px;
 }
 
-.abouttext{
+.activitytext{
     font-family: "Comic Sans MS";
 }
 
-.cykling{
+.activityTitle{
     font-family: "Comic Sans MS";
 }
 
 .swimimage{
-    position: absolute;
-    width: 10%;
-    /*height: 30%;*/
+    width: 100%;
 }
 
 .trximage{
-    position: absolute;
-    width: 10%;
-    height: 32%;
+    width: 100%;
 }
 
 .cycleimage{
-    position: absolute;
-    width: 10%;
+    width: 100%;
 }
 
 .runimage{
-    position: absolute;
-    width: 10%;
-    height: 30%;
+    width: 100%;
+}
+
+@media screen and (max-width: 960px) {
+    .activityimage{
+        margin-top: 27%;
+    }
+
+    .imageactivity{
+        margin-bottom: 5%;
+    }
+
 }
 

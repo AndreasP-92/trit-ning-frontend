@@ -1,7 +1,5 @@
 .image {
-  height: 500px;
-  width: fit-content;
-  /*display: block;*/
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -12,6 +10,20 @@
 
 .kontakt {
   font-family: "Comic Sans MS";
+}
+
+@media screen and (max-width: 960px) {
+  .mobileInput {
+    display: block !important;
+  }
+
+  .desktopInput {
+    display: none !important;
+  }
+
+  .image {
+    margin-top: 30%;
+  }
 }
 
 /*# sourceMappingURL=contact.css.map */
