@@ -68,10 +68,10 @@ public class MainController {
         return "/admin/adminindex";
     }
 
-    @GetMapping("/admin/viewActivities")
+    @GetMapping("/admin/view/activities")
     public String adminviewActivities(){
 
-        return "viewActivities";
+        return "/admin/viewActivities";
     }
 
     @GetMapping("/admin/create/activity")
