@@ -26,10 +26,10 @@ $linkColor: blue;
 
 .footer{
   background-color: #0b27f2;
-  height:           250px;
   margin:           0px;
   width:            100%;
-  padding-top:      25px;
+  padding-top:      75px;
+  padding-bottom: 45px;
   position: sticky;
   top:95%;
 
@@ -42,6 +42,10 @@ $linkColor: blue;
       color:      #ffffff;
       font-size:  48px;
     }
+  }
+
+  .socialIcons {
+
   }
   .buttonFooter{
     color: white
