@@ -63,15 +63,15 @@ public class MainController {
 
     //------------------ ADMIN EDIT -------------------
     @GetMapping("/adminindex")
-    public String adminEdit(){
+    public String adminIndex(){
 
         return "/admin/adminindex";
     }
 
-    @GetMapping("/admin/edit/page")
-    public String adminEditPage(){
+    @GetMapping("/admin/viewActivities")
+    public String adminviewActivities(){
 
-        return "admin/editPage";
+        return "viewActivities";
     }
 
     @GetMapping("/admin/create/activity")
@@ -80,9 +80,9 @@ public class MainController {
         return "admin/createActivity";
     }
 
-    @GetMapping("/admin/edit/page/content")
-    public String adminEditPageContent(){
+    @GetMapping("/admin/edit/{activity}")
+    public String adminEditActivity(){
 
-        return "admin/editPageContent";
+        return "admin/editActivity";
     }
 }
