@@ -62,10 +62,10 @@ public class MainController {
     }
 
     //------------------ ADMIN EDIT -------------------
-    @GetMapping("/admin/edit")
+    @GetMapping("/adminindex")
     public String adminEdit(){
 
-        return "/admin/edit";
+        return "/admin/adminindex";
     }
 
     @GetMapping("/admin/edit/page")
