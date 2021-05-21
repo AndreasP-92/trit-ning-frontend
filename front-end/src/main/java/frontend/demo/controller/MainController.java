@@ -18,6 +18,11 @@ public class MainController {
         return "user/blog";
     }
 
+    @GetMapping("/blog/{blogpost}")
+    public String blogPost(){
+        return "user/blogPost";
+    }
+
     @GetMapping("/contact")
     public String contact(){
 
