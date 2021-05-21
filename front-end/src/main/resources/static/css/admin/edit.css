@@ -1,0 +1,19 @@
+body {
+  background-repeat: no-repeat, repeat;
+  background-position: center;
+  background-color: white;
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.85);
+  display: block;
+  margin: 10% auto;
+}
+
+@media only screen and (max-width: 960px) {
+  body .btn {
+    margin-top: 5%;
+  }
+}
+
+/*# sourceMappingURL=edit.css.map */

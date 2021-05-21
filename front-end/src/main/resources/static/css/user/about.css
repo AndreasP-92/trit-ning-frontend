@@ -1,0 +1,34 @@
+.bannerImg {
+  width: 100%;
+}
+
+.aboutMain {
+  margin-bottom: 5% !important;
+}
+.aboutMain .mobileImg {
+  display: none;
+}
+.aboutMain .desktopImg {
+  display: block;
+}
+.aboutMain .aboutImg {
+  width: 80%;
+  margin-right: 5.2%;
+  margin-bottom: 3%;
+}
+.aboutMain .about {
+  font-family: "Comic Sans MS" !important;
+  margin-top: 10%;
+}
+
+@media screen and (max-width: 960px) {
+  .mobileImg {
+    display: block !important;
+  }
+
+  .desktopImg {
+    display: none !important;
+  }
+}
+
+/*# sourceMappingURL=about.css.map */
