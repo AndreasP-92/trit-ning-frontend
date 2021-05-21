@@ -4,10 +4,10 @@
 const mail = "kim@i-tritraening.dk";
 const myUrl = `http://localhost:5002/select/activities`;
 
-// const requestOptions = {
-//     'content-type': 'application/json',
-//     method: 'GET',
-//     redirect: 'follow'
+const requestOptions = {
+     'content-type': 'application/json',
+    method: 'GET',
+    redirect: 'follow'
 };
 
 fetch(myUrl, requestOptions)

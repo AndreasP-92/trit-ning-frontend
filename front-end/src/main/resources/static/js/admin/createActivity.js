@@ -1,9 +1,8 @@
 const thisForm = document.getElementById('thisForm');
-const topic = document.getElementById('topic');
+const title = document.getElementById('title');
 const banner = document.getElementById('banner');
 const img = document.getElementById('img');
 const editorCopy = document.getElementById('editorCopy');
-const myUrl = `http://localhost:5002/insert/activity`;
 
 jQuery(document).ready(function($) {
     /** ******************************
@@ -47,14 +46,14 @@ thisForm.addEventListener('submit',function (e) {
             method: 'POST',
             body: JSON.stringify({
 
-                'title'         : topic.value,
+                'title'         : title.value,
                 'description'   : editorCopy.value,
                 'banner'        : banner.files[0].name,
                 'img'           : img.files[0].name,
 
             }),
             headers: {
-                'Content-type': 'application/json; charset=UTF-8'
+                'Content-type': 'application/json'
             }
         }).then(function (response) {
             if (response.ok) {
@@ -63,29 +62,31 @@ thisForm.addEventListener('submit',function (e) {
             }
             return Promise.reject(response);
         }).then(function (data) {
-            console.log("AFTER INSERT=========",data.name)
+            console.log("AFTER INSERT=========",data.title)
             console.log(data)
-            for(let i = 0; optionValues.length > i; i++){
-                console.log("OPTIONS====",optionValues[i])
-                insertDuration(optionValues[i], data.name)
-            }
-            thisForm.submit();
+
+            window.location.href = "/adminindex"
         }).catch(function (error) {
             console.warn('Something went wrong.', error);
         });
     }
 
-    fetch(myUrl, requestOptions)
+    const myurl2 = `http://localhost:5002/select/activity/${title.value}`
+    const requestOptions2 = {
+        'content-type': 'application/json',
+        method: 'GET',
+        redirect: 'follow'
+    };
+
+    fetch(myurl2,requestOptions2)
         .then(response => response.json())
         .then(data => {
-            gotActivityData(data)
             console.log(data)
 
-            console.log("findes allerede")
+            console.log("Findes allerede")
             document.getElementById('alreadyExists').innerHTML = "Aktivitet Eksistere allerede";
-        }).catch(async function(){
-        console.log("Findes allerede")
-        document.getElementById('alreadyExists').innerHTML = "Aktivitet eksiterer allerede";
+        }).catch(async function(e){
+            console.log(e)
         await insertActivity();
     })
 })
