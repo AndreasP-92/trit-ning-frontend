@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th = "http://www.thymeleaf.org">
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/b6a1220657.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Lav et Event</title>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="/css/user/fragments.css" type="text/css" rel="stylesheet">
+    <link href="/css/admin/adminindex.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+    <!--=================== NAVIGATION ============================ -->
+    <header>
+        <div th:replace="fragments/adminNav :: adminNav"></div>
+    </header>
+
+    <a href="/admin/index" style="color:black;">
+        <i class='fas fa-arrow-left' style='font-size:36px'></i>
+    </a>
+
+<main class="container w-75">
+        <h3 class="text-center"></h3>
+        <div class="row justify-content-center">
+            <div class="col-lg-5">
+                <button class="w-100 btn p-3 btn-secondary" >Opret Side</button>
+            </div>
+            <div class="col-lg-5">
+                <button class="w-100 p-3 btn btn-secondary">Rediger</button>
+            </div>
+        </div>
+</main>
+
+</body>
+</html>

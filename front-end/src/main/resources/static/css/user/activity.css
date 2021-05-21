@@ -1,0 +1,39 @@
+.image{
+    width: 100%;
+}
+
+.activitytext{
+    font-family: "Comic Sans MS";
+}
+
+.activityTitle{
+    font-family: "Comic Sans MS";
+}
+
+.swimimage{
+    width: 100%;
+}
+
+.trximage{
+    width: 100%;
+}
+
+.cycleimage{
+    width: 100%;
+}
+
+.runimage{
+    width: 100%;
+}
+
+@media screen and (max-width: 960px) {
+    .activityimage{
+        margin-top: 27%;
+    }
+
+    .imageactivity{
+        margin-bottom: 5%;
+    }
+
+}
+

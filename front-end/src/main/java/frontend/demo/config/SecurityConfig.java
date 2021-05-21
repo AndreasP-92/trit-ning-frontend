@@ -9,45 +9,45 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.sql.DataSource;
 import java.io.IOException;
 
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
-    DataSource dataSource;
+    UserDetailsService userDetailsService;
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.jdbcAuthentication()
-                .dataSource(dataSource)
-                .usersByUsernameQuery("SELECT user_mail, user_password, user_enabled "
-                        + "FROM app_user "
-                        + "WHERE user_mail = ?")
-                .authoritiesByUsernameQuery("SELECT usermail, authority "
-                        + "FROM authorities "
-                        + "WHERE usermail = ?");
+        auth.userDetailsService(userDetailsService);
     }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/admin").hasRole("ADMIN")
-                .antMatchers("/user").hasAnyRole("ADMIN", "USER")
-                .antMatchers("/profile/{profile_mail}").hasAnyRole("ADMIN", "USER")
-                .antMatchers("/").permitAll()
+//                .antMatchers("/").permitAll()
+//                .antMatchers("/blog").permitAll()
+//                .antMatchers("/contact").permitAll()
+//                .antMatchers("/activityswim").permitAll()
+//                .antMatchers("/activitycycle").permitAll()
+//                .antMatchers("/activityrun").permitAll()
+//                .antMatchers("/activitytrx").permitAll()
+//                .antMatchers("/about").permitAll()
+//                .antMatchers("/admin/login").permitAll()
+//                .antMatchers("/adminindex").hasRole("ADMIN")
+//                .antMatchers("/admin/create/activity").hasRole("ADMIN")
+//                .antMatchers("/admin/viewActivities").hasRole("ADMIN")
                 .and().formLogin()
                 .permitAll()
-                .loginPage("/login")
+                .loginPage("/admin/login")
                 .usernameParameter("email")
                 .passwordParameter("password")
                 .loginProcessingUrl("/doLogin")
@@ -78,11 +78,4 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     public PasswordEncoder getPasswordEncoder() {
         return NoOpPasswordEncoder.getInstance();
     }
-
-//    @Bean(name = "dataSource")
-//    public javax.sql.DataSource dataSource() {
-//
-//    }
-
-
 }

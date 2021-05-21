@@ -1,20 +1,34 @@
-nav {
+.navbar {
   background-color: #404148ab;
   position: absolute !important;
   top: 0px;
   width: 100%;
 }
-nav a {
+.navbar a {
   font-size: 20px;
   color: white !important;
 }
 
+.loginPage {
+  height: 1048px;
+}
+
+.adminNavbar {
+  background-color: #404148ab;
+}
+.adminNavbar a {
+  font-size: 20px;
+  color: black !important;
+}
+
 .footer {
   background-color: #0b27f2;
-  height: 250px;
   margin: 0px;
   width: 100%;
-  padding-top: 25px;
+  padding-top: 75px;
+  padding-bottom: 45px;
+  position: sticky;
+  top: 95%;
 }
 .footer .contactBtn {
   height: 40px;
