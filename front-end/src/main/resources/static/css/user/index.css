@@ -98,43 +98,43 @@
   margin-bottom: -5%;
 }
 .indexPage .polaroid .pol1 {
-  position: absolute;
+  position: relative;
   transform: rotate(355deg);
-  left: 30%;
+  left: 20%;
 }
 .indexPage .pol2 {
   position: relative;
-  left: 28%;
+  left: 17%;
   transform: rotate(360deg);
   bottom: -15px;
 }
 .indexPage .pol3 {
   position: relative;
-  left: 26%;
+  left: 15%;
 }
 .indexPage .pol4 {
   position: relative;
-  left: 22%;
+  left: 12%;
   transform: rotate(10deg);
   bottom: -20px;
 }
 .indexPage .pol5 {
   position: relative;
   transform: rotate(355deg);
-  bottom: -130px;
-  right: 51%;
+  bottom: 118px;
+  right: -30%;
 }
 .indexPage .pol6 {
   position: relative;
   transform: rotate(360deg);
-  bottom: 131px;
-  right: -37%;
+  bottom: 112px;
+  right: -26%;
 }
 .indexPage .pol7 {
   position: relative;
   transform: rotate(5deg);
-  bottom: 127px;
-  right: -35%;
+  bottom: 100px;
+  right: -24%;
 }
 
 .statements {
