@@ -83,8 +83,8 @@ thisForm.addEventListener('submit',function (e) {
         .then(data => {
             console.log(data)
 
-            console.log("Findes allerede")
-            document.getElementById('alreadyExists').innerHTML = "Aktivitet Eksistere allerede";
+            alert("Title Eksisterer Allerede");
+
         }).catch(async function(e){
             console.log(e)
         await insertActivity();

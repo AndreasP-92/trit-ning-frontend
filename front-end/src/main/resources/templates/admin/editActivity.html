@@ -24,18 +24,18 @@
 </a>
 
 <main class="container">
-    <form class="formbody w-75 mt-5">
+    <form class="formbody w-75 mt-5 " id="thisForm" novalidate>
         <div class="form-group">
-            <label for="topic">Emne</label>
-            <input type="text" class="form-control" id="topic">
+            <label for="title">Emne</label>
+            <input type="text" class="form-control" id="title">
         </div>
         <div>
-            <label for="image">Indsæt banner billede</label>
-            <input type="file" class="form-control" id="bannerImage">
+            <label for="banner">Indsæt banner billede</label>
+            <input type="file" class="form-control" id="banner">
         </div>
         <div>
-            <label for="image">Indsæt Billede</label>
-            <input type="file" class="form-control" id="image">
+            <label for="img">Indsæt Billede</label>
+            <input type="file" class="form-control" id="img">
         </div>
         <label>Beskrivelse</label>
         <div id="editparent">
@@ -63,7 +63,7 @@
                 </div>
             </div>
             <div id="editor" contenteditable></div>
-            <textarea name="ticketDesc" id="editorCopy" required="required" style="display:none;"></textarea>
+            <textarea name="ticketDesc" id="description" required="required" style="display:none;"></textarea>
         </div>
         </div>
             <div>
@@ -72,4 +72,5 @@
     </form>
 </main>
 </body>
+<script src="/js/admin/updateActivity.js"></script>
 </html>
