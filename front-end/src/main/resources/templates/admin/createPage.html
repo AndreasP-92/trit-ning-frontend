@@ -23,19 +23,25 @@
         <i class='fas fa-arrow-left' style='font-size:36px'></i>
     </a>
     <main class="container">
-        <form id="thisForm" novalidate class="formbody w-75 mt-5">
+        <form class="formbody w-75 mt-5" id="thisForm" enctype="multipart/form-data" novalidate>
+
+<!--            TOPIC -->
             <div class="form-group">
                 <div id="alreadyExists"></div>
                 <label for="title">Emne</label>
                 <input type="text" class="form-control" id="title">
             </div>
+
+<!--            INSERT BANNER IMAGE-->
             <div>
                 <label for="banner">Indsæt banner billede</label>
                 <input type="file" class="form-control" id="banner">
             </div>
+
+<!--            INSERT IMAGE FILE-->
             <div>
-                <label for="img">Indsæt Billede</label>
-                <input type="file" class="form-control" id="img">
+                <label for="image">Indsæt Billede</label>
+                <input type="file" name="imageFile" class="form-control" id="image">
             </div>
             <div>
                 <label>Beskrivelse</label>
@@ -71,6 +77,8 @@
                 <button type="submit" style="float: right" class="mt-3 w-10 btn btn-success">Opret side</button>
             </div>
         </form>
+        <button style="float: right" class="mt-3 w-10 btn btn-success" id="getImage"> getImage </button>
+        <img id="insertImage"/>
     </main>
 </body>
 <script src="/js/admin/createActivity.js"></script>

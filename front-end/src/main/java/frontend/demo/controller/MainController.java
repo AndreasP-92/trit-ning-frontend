@@ -60,34 +60,55 @@ public class MainController {
     }
 
 
+    //------------------ ADMIN -------------------
+
     @GetMapping("/admin/login")
     public String login(){
 
         return "user/login";
     }
 
-    //------------------ ADMIN EDIT -------------------
-    @GetMapping("/adminindex")
+    @GetMapping("/admin/index")
     public String adminIndex(){
 
-        return "/admin/adminindex";
+        return "/admin/adminIndex";
+    }
+    // ***** ADMIN BLOG
+
+    @GetMapping("/admin/view/blogpost")
+    public String adminViewBlogPost(){
+
+        return "";
     }
 
-    @GetMapping("/admin/view/activities")
-    public String adminviewActivities(){
+    @GetMapping("/admin/create/blogpost")
+    public String adminCreateBlogPosty(){
 
-        return "/admin/viewActivities";
+        return "";
     }
 
-    @GetMapping("/admin/create/activity")
-    public String adminCreateActivity(){
+    @GetMapping("/admin/edit/{blog}")
+    public String adminEditBlog(){
 
-        return "admin/createActivity";
+        return "";
     }
 
-    @GetMapping("/admin/edit/{activity}")
-    public String adminEditActivity(){
+    // ***** ADMIN PAGES
+    @GetMapping("/admin/view/pages")
+    public String adminviewPages(){
 
-        return "admin/editActivity";
+        return "admin/viewPage";
+    }
+
+    @GetMapping("/admin/create/page")
+    public String adminCreatePage(){
+
+        return "admin/createPage";
+    }
+
+    @GetMapping("/admin/edit/page/{title}")
+    public String adminEditPage(){
+
+        return "admin/editPage";
     }
 }
