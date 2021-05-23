@@ -111,4 +111,10 @@ public class MainController {
 
         return "admin/editPage";
     }
+
+    @GetMapping("/admin/view/blogs")
+    public String adminviewBlogs(){
+
+        return "admin/viewBlogs";
+    }
 }
