@@ -1,4 +1,4 @@
-const thisform = document.getElementById('');
+const thisForm = document.getElementById('thisForm');
 const author = document.getElementById('author');
 const dateTime = document.getElementById('dateTime');
 const description = document.getElementById('description');
@@ -28,40 +28,42 @@ function gotBlogData(data){
     data.forEach(fillTbody)
 }
 
-// ============== INSERT BLOG ==============
+//    ==================================================== FILL ACTIVITY TBODY =========================================
+function fillTbody(item, index) {
+    const tbody = document.querySelector('.tbody')
 
-async function insertBlog(optionValues){
-    const filename = img.files[0].name;
+    // === CREATE TR ===
+    let div = document.createElement('div');
+    div.setAttribute('class', 'form-group');
+    tbody.appendChild(div);
 
+    // === CREATE TH ===
+    let th = document.createElement('th');
+    th.textContent = item.id;
+    tr.appendChild(th);
 
+    // === CREATE TH ===
+    let th1 = document.createElement('th');
+    th1.textContent = item.title;
 
-    fetch('http://localhost:5002/insert/blog', {
-        method: 'POST',
-        body: JSON.stringify({
-            'author'          : author.value,
-            'dateTime'        : dateTime.value,
-            'description'     : description.value,
-            'image'           : '/images/events/'+filename,
-            'title'           : title.value,
-        }),
-        headers: {
-            'Content-type': 'application/json; charset=UTF-8'
-        }
-    }).then(function (response) {
-        if (response.ok) {
-            return response.json();
-            console.log(response)
-        }
-        return Promise.reject(response);
-    }).then(function (data) {
-        console.log("AFTER INSERT=========",data.name)
-        console.log(data)
-        for(let i = 0; optionValues.length > i; i++){
-            console.log("OPTIONS====",optionValues[i])
-            insertDuration(optionValues[i], data.name)
-        }
-        thisForm.submit();
-    }).catch(function (error) {
-        console.warn('Something went wrong.', error);
-    });
+    tr.appendChild(th1);
+
+    // === CREATE TD ===
+    let td = document.createElement('td');
+    td.setAttribute('align', 'center');
+    tr.appendChild(td);
+
+    // === CREATE a ===
+    let a = document.createElement('a');
+    a.setAttribute('class', 'mt-3 w-10 btn btn-info');
+    a.textContent = "Rediger";
+    td.appendChild(a);
+
+    // === CREATE a1 ===
+    let a1 = document.createElement('a');
+    a1.setAttribute('class', 'mt-3 w-10 btn btn-danger');
+    a1.textContent = "slet";
+    td.appendChild(a1);
 }
+
+
