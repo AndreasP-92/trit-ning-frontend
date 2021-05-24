@@ -84,13 +84,13 @@ public class MainController {
     @GetMapping("/admin/create/blogpost")
     public String adminCreateBlogPost(){
 
-        return "user/blogPost";
+        return "admin/createBlog";
     }
 
     @GetMapping("/admin/edit/{blog}")
     public String adminEditBlog(){
 
-        return "";
+        return "admin/editBlog";
     }
 
     // ***** ADMIN PAGES
