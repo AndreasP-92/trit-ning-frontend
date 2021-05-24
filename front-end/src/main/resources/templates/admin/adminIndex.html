@@ -18,18 +18,22 @@
         <div th:replace="fragments/adminNav :: adminNav"></div>
     </header>
 
-    <a href="/admin/index" style="color:black;">
-        <i class='fas fa-arrow-left' style='font-size:36px'></i>
-    </a>
-
 <main class="container w-75">
-        <h3 class="text-center"></h3>
+        <h3 class="text-center mb-5"></h3>
         <div class="row justify-content-center">
             <div class="col-lg-5">
-                <button class="w-100 btn p-3 btn-secondary" >Opret Side</button>
+                <a class="w-100 btn p-3 btn-secondary" href="/admin/view/pages">Se Alle Sider</a>
             </div>
             <div class="col-lg-5">
-                <button class="w-100 p-3 btn btn-secondary">Rediger</button>
+                <a class="w-100 p-3 btn btn-secondary" href="/admin/create/page">Opret Side</a>
+            </div>
+        </div>
+        <div class="row justify-content-center mt-5">
+            <div class="col-lg-5">
+                <a class="w-100 btn p-3 btn-secondary" href="#">Se Blog Indslag</a>
+            </div>
+            <div class="col-lg-5">
+                <a class="w-100 p-3 btn btn-secondary" href="#">Opret Blog Indslag</a>
             </div>
         </div>
 </main>
