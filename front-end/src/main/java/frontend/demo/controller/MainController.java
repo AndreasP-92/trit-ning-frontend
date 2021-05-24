@@ -82,9 +82,9 @@ public class MainController {
     }
 
     @GetMapping("/admin/create/blogpost")
-    public String adminCreateBlogPosty(){
+    public String adminCreateBlogPost(){
 
-        return "";
+        return "user/blogPost";
     }
 
     @GetMapping("/admin/edit/{blog}")
@@ -110,5 +110,23 @@ public class MainController {
     public String adminEditPage(){
 
         return "admin/editPage";
+    }
+
+    @GetMapping("/admin/view/blogs")
+    public String adminviewBlogs(){
+
+        return "admin/viewBlogs";
+    }
+
+    @GetMapping("/admin/create/review")
+    public String adminCreateReview(){
+
+        return "admin/createReview";
+    }
+
+    @GetMapping("/admin/edit/review")
+    public String admineditReview(){
+
+        return "admin/editReview";
     }
 }
