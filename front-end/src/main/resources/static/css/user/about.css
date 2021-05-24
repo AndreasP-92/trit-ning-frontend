@@ -2,22 +2,33 @@
   width: 100%;
 }
 
+.aboutMain {
+  margin-bottom: 5% !important;
+}
+.aboutMain .mobileImg {
+  display: none;
+}
+.aboutMain .desktopImg {
+  display: block;
+}
 .aboutMain .aboutImg {
-  width: 25%;
-  margin-right: 100px;
-  margin-bottom: 50px;
+  width: 80%;
+  margin-right: 5.2%;
+  margin-bottom: 3%;
 }
 .aboutMain .about {
   font-family: "Comic Sans MS" !important;
-  margin-top: 50px !important;
+  margin-top: 10%;
 }
-.aboutMain .title {
-  font-family: "Comic Sans MS";
-  margin-top: 50px;
-  margin-bottom: 100px;
-}
-.aboutMain h3 {
-  margin-bottom: 20px;
+
+@media screen and (max-width: 960px) {
+  .mobileImg {
+    display: block !important;
+  }
+
+  .desktopImg {
+    display: none !important;
+  }
 }
 
 /*# sourceMappingURL=about.css.map */

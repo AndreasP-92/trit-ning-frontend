@@ -2,16 +2,18 @@
   width: 100%;
 }
 
+.blogMain {
+  margin-bottom: 2.1%;
+}
 .blogMain .blogpost img {
   width: 100%;
 }
 .blogMain .blogtext div {
-  margin-bottom: 50px;
+  margin-bottom: 5%;
 }
 .blogMain .blogtext p {
   font-family: "Comic Sans MS";
   margin-bottom: 0px !important;
-  padding-right: 100%;
   width: 100%;
   white-space: nowrap;
   overflow: hidden;
@@ -19,8 +21,8 @@
 }
 .blogMain .title {
   font-family: "Comic Sans MS";
-  margin-top: 50px;
-  margin-bottom: 100px;
+  margin-top: 2.6%;
+  margin-bottom: 5.3%;
 }
 
 /*# sourceMappingURL=blog.css.map */

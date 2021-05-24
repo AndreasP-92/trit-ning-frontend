@@ -4,17 +4,16 @@ body {
   background-color: white;
 }
 
-.container .editor {
+.container {
   background: rgba(255, 255, 255, 0.85);
-  padding: 25px;
   display: block;
-  margin: 10% auto 0 auto;
+  margin: 10% auto;
 }
-.container .form-button {
-  background-color: #ffffff !important;
-  border: 1px solid #000000;
-  display: inline-block;
-  cursor: pointer;
+
+@media only screen and (max-width: 960px) {
+  body .btn {
+    margin-top: 5%;
+  }
 }
 
 /*# sourceMappingURL=edit.css.map */

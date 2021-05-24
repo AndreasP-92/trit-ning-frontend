@@ -13,3 +13,10 @@ function myFunction() {
         moreText.style.display = "inline";
     }
 }
+
+// document.getElementById("go").addEventListener("click", function() {
+//     var img = document.querySelectorAll("#container .image img")[0];
+//
+//     img.style.height = "200px";
+//     img.style.width = "100px";
+// });

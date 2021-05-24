@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th = "http://www.thymeleaf.org">
+
+<head>
+    <script src="/js/tinymce.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Edit Page Content</title>
+    <link href="/css/user/fragments.css" type="text/css" rel="stylesheet">
+    <link href="/css/admin/createActivity.css" type="text/css" rel="stylesheet">
+    <!--    <script>tinymce.init({ selector:'#pclu-textarea' });</script>-->
+
+</head>
+<body>
+<header>
+    <div th:replace="fragments/adminNav :: adminNav"></div>
+</header>
+<main class="container">
+    <form class="formbody w-75">
+        <div class="form-group">
+            <label for="topic">Emne</label>
+            <input type="text" class="form-control" id="topic">
+        </div>
+        <div>
+            <label for="image">Indsæt banner billede</label>
+            <input type="file" class="form-control" id="bannerImage">
+        </div>
+        <div>
+            <label for="image">Indsæt Billede</label>
+            <input type="file" class="form-control" id="image">
+        </div>
+        <div>
+            <label for="pclu-textarea">Beskrivelse</label>
+            <textarea name="pc-textarea" type="text" id="pclu-textarea" class="form-control"></textarea>
+        </div>
+        <div>
+            <a style="float: right" class="mt-3 w-10 btn btn-success">Opdater side</a>
+        </div>
+    </form>
+</main>
+</body>
+</html>
