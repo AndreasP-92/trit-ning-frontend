@@ -96,45 +96,47 @@
   padding-bottom: 5%;
   color: black;
   margin-bottom: -5%;
+  height: 700px;
 }
 .indexPage .polaroid .pol1 {
-  position: relative;
+  position: absolute;
   transform: rotate(355deg);
-  left: 20%;
+  left: 36%;
 }
-.indexPage .pol2 {
-  position: relative;
-  left: 17%;
+.indexPage .polaroid .pol2 {
+  top: 10%;
+  position: absolute;
+  left: 42%;
   transform: rotate(360deg);
-  bottom: -15px;
 }
-.indexPage .pol3 {
-  position: relative;
-  left: 15%;
+.indexPage .polaroid .pol3 {
+  top: 9%;
+  position: absolute;
+  left: 48%;
 }
-.indexPage .pol4 {
-  position: relative;
-  left: 12%;
+.indexPage .polaroid .pol4 {
+  position: absolute;
+  top: 14%;
+  left: 54%;
   transform: rotate(10deg);
-  bottom: -20px;
 }
-.indexPage .pol5 {
-  position: relative;
+.indexPage .polaroid .pol5 {
+  position: absolute;
   transform: rotate(355deg);
-  bottom: 118px;
-  right: -30%;
+  left: 39%;
+  top: 43%;
 }
-.indexPage .pol6 {
-  position: relative;
+.indexPage .polaroid .pol6 {
+  position: absolute;
   transform: rotate(360deg);
-  bottom: 112px;
-  right: -26%;
+  left: 45%;
+  top: 38%;
 }
-.indexPage .pol7 {
-  position: relative;
+.indexPage .polaroid .pol7 {
+  position: absolute;
   transform: rotate(5deg);
-  bottom: 100px;
-  right: -24%;
+  left: 51%;
+  top: 41%;
 }
 
 .statements {
