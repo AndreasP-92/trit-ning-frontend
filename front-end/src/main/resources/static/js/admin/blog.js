@@ -7,7 +7,7 @@ const title = document.getElementById('title');
 
 
 
-// ============== GET ACTIVITY ==============
+// ============== GET BLOG ==============
 
 const mail = "kim@i-tritraening.dk";
 const myUrl = `http://localhost:5002/select/blogs`;
@@ -28,9 +28,9 @@ function gotBlogData(data){
     data.forEach(fillTbody)
 }
 
-// ============== INSERT ACTIVITY ==============
+// ============== INSERT BLOG ==============
 
-async function insertActivity(optionValues){
+async function insertBlog(optionValues){
     const filename = img.files[0].name;
 
 
@@ -40,7 +40,7 @@ async function insertActivity(optionValues){
         body: JSON.stringify({
             'author'          : author.value,
             'dateTime'        : dateTime.value,
-            'description'          : description.value,
+            'description'     : description.value,
             'image'           : '/images/events/'+filename,
             'title'           : title.value,
         }),
