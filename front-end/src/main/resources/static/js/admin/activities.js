@@ -1,7 +1,6 @@
 
 
 //    ==================================================== GET ACTIVITY ================================================
-const mail = "kim@i-tritraening.dk";
 const myUrl = `http://localhost:5002/select/activities`;
 
 const requestOptions = {
@@ -16,12 +15,9 @@ fetch(myUrl, requestOptions)
         gotActivityData(data)
         console.log(data)
 
-        console.log("findes allerede")
-        document.getElementById('alreadyExists').innerHTML = "Aktivitet Eksistere allerede";
-    }).catch(async function(){
-    console.log("Findes allerede")
-    document.getElementById('alreadyExists').innerHTML = "Aktivitet eksiterer allerede";
-    await insertActivity();
+
+    }).catch(async function(e){
+        console.log(e);
     })
 
 function gotActivityData(data){
