@@ -117,4 +117,16 @@ public class MainController {
 
         return "admin/viewBlogs";
     }
+
+    @GetMapping("/admin/create/review")
+    public String adminCreateReview(){
+
+        return "admin/createReview";
+    }
+
+    @GetMapping("/admin/edit/review")
+    public String admineditReview(){
+
+        return "admin/editReview";
+    }
 }
