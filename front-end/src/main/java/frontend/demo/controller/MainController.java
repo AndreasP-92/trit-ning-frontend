@@ -124,8 +124,8 @@ public class MainController {
         return "admin/createReview";
     }
 
-    @GetMapping("/admin/edit/review")
-    public String admineditReview(){
+    @GetMapping("/admin/edit/review/{id}")
+    public String adminEditReview(){
 
         return "admin/editReview";
     }
