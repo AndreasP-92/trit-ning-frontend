@@ -24,18 +24,6 @@ function insertPageData(){
 
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
 thisForm.addEventListener('submit',async function (e) {
     e.preventDefault();
 
