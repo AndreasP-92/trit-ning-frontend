@@ -3,7 +3,14 @@ const title = document.getElementById('title');
 const banner = document.getElementById('banner');
 const img = document.getElementById('img');
 const description = document.getElementById('description');
-const GetPageUrl = 'http://localhost:5002/select/activities';
+const test1 = document.getElementById('test1');
+
+thePath = window.location.pathname;
+const urlTitle = thePath.substring(thePath.lastIndexOf('/')+1)
+
+const GetPageUrl = `http://localhost:5002/select/activity/${urlTitle}`;
+
+console.log(urlTitle)
 
 const requestOptions2 = {
     'content-type': 'application/json',
@@ -14,14 +21,16 @@ const requestOptions2 = {
 fetch(GetPageUrl, requestOptions2)
     .then(response => response.json())
     .then(data => {
-        insertPageData();
+        insertPageData(data);
         console.log(data);
     }).catch(function (e){
         console.log(e);
 })
 
-function insertPageData(){
-
+function insertPageData(data){
+    test1.value = data.description;
+    title.value = data.title;
+    description.value = data.description;
 }
 
 thisForm.addEventListener('submit',async function (e) {
@@ -59,6 +68,4 @@ thisForm.addEventListener('submit',async function (e) {
             console.warn('Something went wrong.', error);
         });
     }
-
-
 })
