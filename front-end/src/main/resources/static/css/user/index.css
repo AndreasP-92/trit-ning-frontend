@@ -98,6 +98,9 @@
   margin-bottom: -5%;
   height: 700px;
 }
+.indexPage .polaroid img {
+  width: 100%;
+}
 .indexPage .polaroid .pol1 {
   position: absolute;
   transform: rotate(355deg);

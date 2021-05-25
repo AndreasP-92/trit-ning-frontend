@@ -33,34 +33,25 @@
 // });
 
 
-let token = '19016646806f5a0e2c83af6ff3f21f8c',
-    username = 'tritraeningdk', // rudrastyh - my username :)
-    num_photos = 4;
+const fetchInstagramPhotos = async (accountUrl) => {
+    const response = await axios.get(accountUrl)
+    const json = JSON.parse(response.data.match(instagramRegExp)[1])
+    const edges = json.entry_data.ProfilePage[0].graphql.user.edge_owner_to_timeline_media.edges.splice(0, 8)
+    const photos = edges.map(({ node }) => {
+        return {
+            url: `https://www.instagram.com/p/${node.shortcode}/`,
+            thumbnailUrl: node.thumbnail_src,
+            displayUrl: node.display_url,
+            caption: node.edge_media_to_caption.edges[0].node.text
+        }
+    })
+    return photos
+}
 
-$.ajax({ // the first ajax request returns the ID of user rudrastyh
-    url: 'https://api.instagram.com/v1/users/search',
-    dataType: 'jsonp',
-    type: 'GET',
-    data: {access_token: token, q: username}, // actually it is just the search by username
-    success: function(data){
-        console.log(data);
-        $.ajax({
-            url: 'https://api.instagram.com/v1/users/' + data.data[0].id + '/media/recent', // specify the ID of the first found user
-            dataType: 'jsonp',
-            type: 'GET',
-            data: {access_token: token, count: num_photos},
-            success: function(data2){
-                console.log(data2);
-                for(x in data2.data){
-                    $('ul').append('<li><img src="'+data2.data[x].images.thumbnail.url+'"></li>');
-                }
-            },
-            error: function(data2){
-                console.log(data2);
-            }
-        });
-    },
-    error: function(data){
-        console.log(data);
-    }
-});
+try {
+    const photos = fetchInstagramPhotos('https://www.instagram.com/tritraeningdk/')
+    console.log(photos)
+    // Do something with the photos
+} catch (e) {
+    console.error('Fetching Instagram photos failed', e)
+}
