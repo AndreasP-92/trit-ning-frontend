@@ -26,9 +26,61 @@ const requestOptions = {
         fetch(myUrl, requestOptions)
             .then(response => response.json)
             .then(data =>{
+                insertBlogData();
                 console.log(data)
 
             })
+
+        function insertBlogData(){
+
+        }
+
+thisForm.addEventListener('submit',async function (e) {
+    e.preventDefault();
+
+    await insertBlog();
+
+
+    async function insertBlog() {
+        fetch('http://localhost:5002/edit/blog', {
+            method: 'PUT',
+            body: JSON.stringify({
+
+                'title': title.value,
+                'description': editorCopy.value,
+                'img': img.value,
+                'datetime': date,
+                'author': author.value,
+
+            }),
+            headers: {
+                'Content-type': 'application/json'
+            }
+        }).then(function (response) {
+            if (response.ok) {
+                return response.json();
+                console.log(response)
+            }
+            return Promise.reject(response);
+        }).then(function (data) {
+            console.log("AFTER INSERT=========", data.title)
+            console.log(data)
+
+            window.location.href = "/adminindex"
+        }).catch(function (error) {
+            console.warn('Something went wrong.', error);
+        });
+    }
+
+
+})
+
+
+
+
+
+
+
 
 
 
