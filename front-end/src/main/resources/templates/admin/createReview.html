@@ -2,10 +2,9 @@
 <html xmlns:th = "http://www.thymeleaf.org">
 
 <head>
-    <script src="/js/tinymce.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="/js/tinymce.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/b6a1220657.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1.0">
@@ -66,7 +65,7 @@
                     </div>
                 </div>
                 <div id="editor" contenteditable></div>
-                <textarea name="ticketDesc" id="editorCopy" required="required" style="display:none;"></textarea>
+                <textarea name="ticketDesc" id="description" required="required" style="display:none;"></textarea>
             </div>
         </div>
         <div>
@@ -77,7 +76,5 @@
     <img id="insertImage"/>
 </main>
 </body>
-<script src="/js/admin/createActivity.js"></script>
 <script src="/js/admin/createReview.js"></script>
-
 </html>
