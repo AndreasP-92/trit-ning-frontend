@@ -9,7 +9,7 @@ const title = document.getElementById('title');
 
 // ============== GET BLOG ==============
 
-const mail = "kim@i-tritraening.dk";
+const mail = "kim@tritraening.dk";
 const myUrl = `http://localhost:5002/select/blogs`;
 
 const requestOptions = {
@@ -21,21 +21,22 @@ const requestOptions = {
 fetch(myUrl, requestOptions)
     .then(response => response.json())
     .then(data => {
-        gotBlogData(data)
+        gotBlog(data)
     })
 
-function gotBlogData(data){
-    data.forEach(fillTbody)
+function gotBlog(data){
+    title.value = data.title;
+    author.value = data.author;
+    description.value = data.description;
 }
-
 //    ==================================================== FILL ACTIVITY TBODY =========================================
-function fillTbody(item, index) {
-    const tbody = document.querySelector('.tbody')
+function fillFormBody(item, index) {
+    const formBody = document.querySelector('.formBody')
 
     // === CREATE TR ===
     let div = document.createElement('div');
     div.setAttribute('class', 'form-group');
-    tbody.appendChild(div);
+    formBody.appendChild(div);
 
     // === CREATE TH ===
     let th = document.createElement('th');
