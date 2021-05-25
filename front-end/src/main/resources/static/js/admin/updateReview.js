@@ -17,17 +17,17 @@ jQuery(document).ready(function($) {
         }
 
         var textval = $("#editor").html();
-        $("#description").val(textval);
+        $("#editorCopy").val(textval);
     });
 
     $("#editor").keyup(function() {
         var value = $(this).html();
-        $("#description").val(value);
+        $("#editorCopy").val(value);
     }).keyup();
 
     $('#checkIt').click(function(e) {
         e.preventDefault();
-        alert($("#description").val());
+        alert($("#editorCopy").val());
     });
 });
 
@@ -35,9 +35,10 @@ thePath = window.location.pathname;
 const urlId = thePath.substring(thePath.lastIndexOf('/')+1)
 const reviewImage   = document.getElementById("reviewImage");
 const author        = document.getElementById("author");
-const description   = document.getElementById("description");
+const editorCopy   = document.getElementById("editorCopy");
 const thisForm      = document.getElementById("thisForm");
 const GetReviewUrl  = 'http://localhost:5002/select/review/'+ urlId;
+const editor = document.getElementById('editor');
 
 
 const requestOptions = {
@@ -52,6 +53,7 @@ fetch(GetReviewUrl ,requestOptions)
     }).then(data => {
     console.log(data.author)
     author.value = data.author
+    editor.innerHTML = data.description
     }).catch(function (error){
         console.log(error)
 })
@@ -62,13 +64,13 @@ thisForm.addEventListener('submit',async function (e){
 updateReview();
 
     async function updateReview(){
-        fetch('http://localhost:5002/edit/review/'+ urlId, {
-            method: 'PUT',
+        fetch(`http://localhost:5002/edit/review/${urlId}`, {
+            method: 'POST',
             body: JSON.stringify({
-
+                'id': urlId,
                 'author': author.value,
-                'description': description.value,
-                // 'reviewImage': reviewImage.files[0].name,
+                'description': editorCopy.value,
+                'reviewImage': reviewImage.files[0].name,
             }),
             headers: {
                 'Content-type': 'application/json'
