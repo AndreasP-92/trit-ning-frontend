@@ -2,8 +2,9 @@ const thisForm = document.getElementById('thisForm');
 const title = document.getElementById('title');
 const banner = document.getElementById('banner');
 const img = document.getElementById('img');
-const description = document.getElementById('description');
-const test1 = document.getElementById('test1');
+const editor = document.getElementById('editor');
+const editorCopy = document.getElementById('editorCopy');
+
 
 thePath = window.location.pathname;
 const urlTitle = thePath.substring(thePath.lastIndexOf('/')+1)
@@ -28,44 +29,58 @@ fetch(GetPageUrl, requestOptions2)
 })
 
 function insertPageData(data){
-    test1.value = data.description;
     title.value = data.title;
-    description.value = data.description;
+    editor.innerHTML = data.description;
+    console.log(data.description)
 }
 
+//==============================================FORM EVENT LISTENER=====================================================
 thisForm.addEventListener('submit',async function (e) {
     e.preventDefault();
 
-    await insertActivity();
+    await updateActivity();
 
 
-    async function insertActivity() {
-        fetch('http://localhost:5002/edit/activity', {
-            method: 'PUT',
-            body: JSON.stringify({
 
-                'title': title.value,
-                'description': description.value,
-                'banner': banner.files[0].name,
-                'img': img.files[0].name,
+})
 
-            }),
-            headers: {
-                'Content-type': 'application/json'
-            }
-        }).then(function (response) {
+async function updateActivity() {
+
+    console.log(editorCopy.value)
+    const urlUpdatePage = `http://localhost:5002/edit/activity/${urlTitle}`;
+
+    const requestOptions4 = {
+
+    }
+
+    console.log(requestOptions4)
+
+    fetch(`http://localhost:5002/edit/activity/swim`,{
+        method: 'PUT',
+        body: JSON.stringify({
+
+            'title': title.value,
+            'description': editorCopy.value,
+            'banner': banner.files[0].name,
+            'img': img.files[0].name,
+
+        }),
+        headers: {
+            'Content-type': 'application/json'
+        }
+    })
+        .then(function (response) {
             if (response.ok) {
                 return response.json();
                 console.log(response)
             }
             return Promise.reject(response);
         }).then(function (data) {
-            console.log("AFTER INSERT=========", data.title)
-            console.log(data)
+        console.log("AFTER INSERT=========", data.title)
+        console.log(data)
 
-            window.location.href = "/adminindex"
-        }).catch(function (error) {
-            console.warn('Something went wrong.', error);
-        });
-    }
-})
+        // window.location.href = "/admin/index"
+    }).catch(function (error) {
+        console.warn('Something went wrong.', error);
+    });
+}

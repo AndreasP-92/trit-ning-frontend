@@ -33,9 +33,6 @@
             <label for="banner">Indsæt banner billede</label>
             <input type="file" class="form-control" id="banner">
         </div>
-
-        <textarea  id="test1" required="required" ></textarea>
-
         <div>
             <label for="img">Indsæt Billede</label>
             <input type="file" class="form-control" id="img">
@@ -66,14 +63,15 @@
                 </div>
             </div>
             <div id="editor" contenteditable></div>
-            <textarea name="ticketDesc" id="description" required="required" style="display:none;"></textarea>
+            <textarea name="ticketDesc" id="editorCopy" required="required" style="display:none;"></textarea>
         </div>
         </div>
             <div>
-                <a style="float: right" class="mt-3 w-10 btn btn-success">Opdater side</a>
+                <button style="float: right" class="mt-3 w-10 btn btn-success" type="submit">Opdater side</button>
             </div>
     </form>
 </main>
 </body>
 <script src="/js/admin/updateActivity.js"></script>
+<script src="/js/admin/textEditor.js"></script>
 </html>
