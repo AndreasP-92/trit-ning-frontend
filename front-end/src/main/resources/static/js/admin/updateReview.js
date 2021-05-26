@@ -35,7 +35,7 @@ thePath = window.location.pathname;
 const urlId = thePath.substring(thePath.lastIndexOf('/')+1)
 const reviewImage   = document.getElementById("reviewImage");
 const author        = document.getElementById("author");
-const editorCopy   = document.getElementById("editorCopy");
+const editorCopy    = document.getElementById("editorCopy");
 const thisForm      = document.getElementById("thisForm");
 const GetReviewUrl  = 'http://localhost:5002/select/review/'+ urlId;
 const editor = document.getElementById('editor');
@@ -67,8 +67,8 @@ updateReview();
         fetch(`http://localhost:5002/edit/review/${urlId}`, {
             method: 'POST',
             body: JSON.stringify({
-                'id': urlId,
-                'author': author.value,
+                'id'         : urlId,
+                'author'     : author.value,
                 'description': editorCopy.value,
                 'reviewImage': reviewImage.files[0].name,
             }),

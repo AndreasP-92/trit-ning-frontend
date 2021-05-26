@@ -29,31 +29,31 @@ public class MainController {
         return "user/contact";
     }
 
-    @GetMapping("/activityswim")
-    public String activityswim() {
-
-        return "user/activityswim";
-    }
-
     @GetMapping("/about")
     public String about() {
 
         return "user/about";
     }
 
-    @GetMapping("/activitycycle")
+    @GetMapping("/page/swim")
+    public String activityswim() {
+
+        return "user/activityswim";
+    }
+
+    @GetMapping("/page/cycle")
     public String activitycycle() {
 
         return "user/activitycycle";
     }
 
-    @GetMapping("/activityrun")
+    @GetMapping("/page/run")
     public String activityrun() {
 
         return "user/activityrun";
     }
 
-    @GetMapping("/activitytrx")
+    @GetMapping("/page/trx")
     public String activitytrx() {
 
         return "user/activitytrx";
