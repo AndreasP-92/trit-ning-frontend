@@ -55,7 +55,7 @@ async function updateActivity() {
 
     console.log(requestOptions4)
 
-    fetch(`http://localhost:5002/edit/activity/swim`,{
+    fetch(`http://localhost:5002/edit/activity`,{
         method: 'PUT',
         body: JSON.stringify({
 
