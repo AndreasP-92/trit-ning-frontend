@@ -9,7 +9,6 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;
@@ -17,17 +16,26 @@ import org.springframework.security.web.authentication.AuthenticationSuccessHand
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.sql.DataSource;
 import java.io.IOException;
 
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
-    UserDetailsService userDetailsService;
+    DataSource dataSource;
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(userDetailsService);
+        auth.jdbcAuthentication()
+                .dataSource(dataSource)
+//                .passwordEncoder(new BCryptPasswordEncoder())
+                .usersByUsernameQuery("SELECT mail, password, enabled "
+                        + "FROM users "
+                        + "WHERE mail = ?")
+                .authoritiesByUsernameQuery("SELECT mail, role "
+                        + "FROM auth "
+                        + "WHERE mail = ?");
     }
 
     @Override
@@ -36,15 +44,24 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //                .antMatchers("/").permitAll()
 //                .antMatchers("/blog").permitAll()
 //                .antMatchers("/contact").permitAll()
-//                .antMatchers("/activityswim").permitAll()
-//                .antMatchers("/activitycycle").permitAll()
-//                .antMatchers("/activityrun").permitAll()
-//                .antMatchers("/activitytrx").permitAll()
+//                .antMatchers("/activity/swim").permitAll()
+//                .antMatchers("/activity/cycle").permitAll()
+//                .antMatchers("/activity/run").permitAll()
+//                .antMatchers("/activity/trx").permitAll()
 //                .antMatchers("/about").permitAll()
 //                .antMatchers("/admin/login").permitAll()
-//                .antMatchers("/adminindex").hasRole("ADMIN")
-//                .antMatchers("/admin/create/activity").hasRole("ADMIN")
-//                .antMatchers("/admin/viewActivities").hasRole("ADMIN")
+//                .antMatchers("/admin/index").hasRole("ADMIN")
+//                .antMatchers("/admin/login").hasRole("ADMIN")
+//                .antMatchers("/admin/view/blogpost").hasRole("ADMIN")
+//                .antMatchers("/admin/create/blogpost").hasRole("ADMIN")
+//                .antMatchers("/admin/edit{blog}").hasRole("ADMIN")
+//                .antMatchers("/admin/view/pages").hasRole("ADMIN")
+//                .antMatchers("/admin/create/page").hasRole("ADMIN")
+//                .antMatchers("/admin/edit/page/{title}").hasRole("ADMIN")
+//                .antMatchers("/admin/view/blogs").hasRole("ADMIN")
+//                .antMatchers("/admin/create/review").hasRole("ADMIN")
+//                .antMatchers("/admin/edit/review/{id}").hasRole("ADMIN")
+//                .antMatchers("/admin/create/page").hasRole("ADMIN")
                 .and().formLogin()
                 .permitAll()
                 .loginPage("/admin/login")
