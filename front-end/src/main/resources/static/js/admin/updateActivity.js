@@ -49,26 +49,47 @@ async function updateActivity() {
     console.log(editorCopy.value)
     const urlUpdatePage = `http://localhost:5002/edit/activity/${urlTitle}`;
 
-    const requestOptions4 = {
+    let init;
 
+    if (editorCopy.value == ""){
+
+         init = {
+            method: 'PUT',
+            body: JSON.stringify({
+
+                'title': title.value,
+                'banner': banner.files[0].name,
+                'img': img.files[0].name,
+
+            }),
+            headers: {
+                'Content-type': 'application/json'
+            }
+        }
+
+
+    }else if (editorCopy.value != ""){
+         init = {
+            method: 'PUT',
+            body: JSON.stringify({
+
+                'title': title.value,
+                'description': editorCopy.value,
+                'banner': banner.files[0].name,
+                'img': img.files[0].name,
+
+            }),
+            headers: {
+                'Content-type': 'application/json'
+            }
+        }
     }
 
-    console.log(requestOptions4)
+    console.log(init)
 
-    fetch(`http://localhost:5002/edit/activity`,{
-        method: 'PUT',
-        body: JSON.stringify({
 
-            'title': title.value,
-            'description': editorCopy.value,
-            'banner': banner.files[0].name,
-            'img': img.files[0].name,
 
-        }),
-        headers: {
-            'Content-type': 'application/json'
-        }
-    })
+    fetch(`http://localhost:5002/edit/activity`,init)
         .then(function (response) {
             if (response.ok) {
                 return response.json();

@@ -120,21 +120,7 @@ async function insertPage(){
 
     }
 
-    fetch(url, requestOptions)
-        .then(function (response) {
-        if (response.ok) {
-            return response.json();
-            console.log(response)
-        }
-        return Promise.reject(response);
-    }).then(function (data) {
-        console.log("AFTER INSERT=========",data.title)
-        console.log(data)
 
-        // window.location.href = "/admin/index"
-    }).catch(function (error) {
-        console.warn('Something went wrong.', error);
-    });
 }
 
 // ============ GET PAGES FUNC
