@@ -30,13 +30,14 @@ function gotBlog(data){
     description.value = data.description;
 }
 //    ==================================================== FILL ACTIVITY TBODY =========================================
-function fillFormBody(item, index) {
-    const formBody = document.querySelector('.formBody')
+function fillTbody(item, index) {
+    const tbody = document.querySelector('.tbody')
+
 
     // === CREATE TR ===
-    let div = document.createElement('div');
-    div.setAttribute('class', 'form-group');
-    formBody.appendChild(div);
+    let tr = document.createElement('tr');
+    tr.setAttribute('align', 'center');
+    tbody.appendChild(tr);
 
     // === CREATE TH ===
     let th = document.createElement('th');
@@ -46,8 +47,12 @@ function fillFormBody(item, index) {
     // === CREATE TH ===
     let th1 = document.createElement('th');
     th1.textContent = item.title;
-
     tr.appendChild(th1);
+
+    // === CREATE TH ===
+    let th2 = document.createElement('th');
+    th2.textContent = item.author;
+    tr.appendChild(th2);
 
     // === CREATE TD ===
     let td = document.createElement('td');
@@ -66,5 +71,3 @@ function fillFormBody(item, index) {
     a1.textContent = "slet";
     td.appendChild(a1);
 }
-
-
