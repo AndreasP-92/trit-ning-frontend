@@ -19,7 +19,7 @@ thisForm.addEventListener('submit',function (e) {
             method: 'POST',
             body: JSON.stringify({
                 'title': title.value,
-                'description': editorCopy.value,
+                'description': editor.value,
                 'img': img.value,
                 'datetime': date,
                 'author': author.value,
