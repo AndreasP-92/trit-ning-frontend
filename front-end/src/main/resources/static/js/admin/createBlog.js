@@ -2,9 +2,8 @@ const thisForm = document.getElementById('thisForm');
 const author = document.getElementById('author');
 const dateTime = document.getElementById('dateTime');
 const image = document.getElementById('image');
-const title = document.getElementById('title');
-const editorCopy = document.getElementById('editorCopy');
-
+const title = document.getElementById('title');;
+const editor = document.getElementById('editor');
 
 // ============== INSERT BLOG ==============
 
