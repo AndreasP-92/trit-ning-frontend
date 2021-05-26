@@ -91,38 +91,6 @@ async function updateBlog() {
 }
 
 
-// async function insertBlog() {
-//     fetch('http://localhost:5002/edit/blog', {
-//         method: 'PUT',
-//         body: JSON.stringify({
-//             'id':   urlId,
-//             'title': title.value,
-//             'description': editorCopy.value,
-//             'img': img.value,
-//             'datetime': date,
-//             'author': author.value,
-//
-//         }),
-//         headers: {
-//             'Content-type': 'application/json'
-//         }
-//     }).then(function (response) {
-//         if (response.ok) {
-//             return response.json();
-//             console.log(response)
-//         }
-//         return Promise.reject(response);
-//     }).then(function (data) {
-//         console.log("AFTER INSERT=========", data.title)
-//         console.log(data)
-//
-//         window.location.href = "/adminindex"
-//     }).catch(function (error) {
-//         console.warn('Something went wrong.', error);
-//     });
-// }
-//
-
 
 
 
