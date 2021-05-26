@@ -40,8 +40,6 @@ thisForm.addEventListener('submit',async function (e) {
 
     await updateActivity();
 
-
-
 })
 
 async function updateActivity() {

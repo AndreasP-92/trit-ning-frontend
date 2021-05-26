@@ -129,4 +129,9 @@ public class MainController {
 
         return "admin/editReview";
     }
+
+    @GetMapping("/admin/view/admins")
+    public String adminViewAdmin(){
+        return "admin/viewAdmins";
+    }
 }
