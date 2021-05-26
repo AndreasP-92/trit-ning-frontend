@@ -1,97 +1,76 @@
 const thisForm = document.getElementById('thisForm');
 const author = document.getElementById('author');
-const dateTime = document.getElementById('dateTime');
 const image = document.getElementById('image');
 const title = document.getElementById('title');;
 const editor = document.getElementById('editor');
+const editorCopy = document.getElementById('editorCopy')
 
 // ============== INSERT BLOG ==============
 
-thisForm.addEventListener('submit',function (e) {
+thisForm.addEventListener('submit',async function (e) {
     e.preventDefault();
 
-        var today = new Date();
-        var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+       await getBlog();
+})
 
-        console.log(date)
+async function insertBlog() {
 
-        fetch('http://localhost:5002/insert/blog', {
-            method: 'POST',
-            body: JSON.stringify({
-                'title': title.value,
-                'description': editor.value,
-                'img': img.value,
-                'datetime': date,
-                'author': author.value,
-            }),
-            headers: {
-                'Content-type': 'application/json; charset=UTF-8'
-            }
-        }).then(function (response) {
+    let today = new Date();
+    let date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+
+    console.log(date)
+
+    let myUrl1 =  'http://localhost:5002/insert/blog';
+    let requestOptions1 = {
+
+        method: 'POST',
+        body: JSON.stringify({
+            'title': title.value,
+            'description': editorCopy.value,
+            'img'        : img.files[0].name,
+            'datetime': date,
+            'author': author.value,
+        }),
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8'
+        }
+
+    }
+    fetch(myUrl1, requestOptions1)
+        .then(function (response) {
             if (response.ok) {
                 return response.json();
                 console.log(response)
             }
             return Promise.reject(response);
         }).then(function (data) {
-            console.log("AFTER INSERT=========", data.title)
-            console.log(data)
+        console.log("AFTER INSERT=========",data.title)
+        console.log(data)
 
-            thisForm.submit();
-        }).catch(function (error) {
-            console.warn('Something went wrong.', error);
-        });
+        // window.location.href = "/admin/index"
+    }).catch(function (error) {
+        console.warn('Something went wrong.', error);
+    });
+}
 
-
-})
-
-    const myUrl = 'http://localhost:5002/select/blogs'
+// ============ GET BLOGS FUNC
+async function getBlog (){
+    const myUrl = `http://localhost:5002/select/blog/${title.value}`
     const requestOptions = {
-        'Content-type': 'application/json;',
+        'content-type': 'application/json',
         method: 'GET',
         redirect: 'follow'
     };
 
-    fetch(myUrl, requestOptions)
+    fetch(myUrl,requestOptions)
         .then(response => response.json())
         .then(data => {
             console.log(data)
 
-        })
-
-
-
-
-
-jQuery(document).ready(function($) {
-    /** ****************************
-     * Simple WYSIWYG
-     **************************** **/
-    $('#editControls a').click(function(e) {
-        e.preventDefault();
-        switch($(this).data('role')) {
-            case 'h1':
-            case 'h2':
-            case 'h3':
-            case 'p':
-                document.execCommand('formatBlock', false, $(this).data('role'));
-                break;
-            default:
-                document.execCommand($(this).data('role'), false, null);
-                break;
-        }
-
-        var textval = $("#editor").html();
-        $("#editorCopy").val(textval);
-    });
-
-    $("#editor").keyup(function() {
-        var value = $(this).html();
-        $("#editorCopy").val(value);
-    }).keyup();
-
-    $('#checkIt').click(function(e) {
-        e.preventDefault();
-        alert($("#editorCopy").val());
-    });
-});
+            console.log("Findes allerede")
+            document.getElementById('alreadyExists').innerHTML = "Blog Eksistere allerede";
+        }).catch(async function(e){
+        console.log(e)
+        await insertBlog();
+    })
+}
