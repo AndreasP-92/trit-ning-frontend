@@ -67,7 +67,7 @@ thisForm.addEventListener('submit',async function(e){
             body: JSON.stringify({
                 'author'        : author.value,
                 'description'   : editorCopy.value,
-                'reviewImage'   : reviewImage.files[0].name
+                // 'reviewImage'   : reviewImage.files[0].name
             }),
             headers: {
                 'Content-type': 'application/json'
