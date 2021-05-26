@@ -87,7 +87,7 @@ public class MainController {
         return "admin/createBlog";
     }
 
-    @GetMapping("/admin/edit/{blog}")
+    @GetMapping("/admin/edit/blog/{title}")
     public String adminEditBlog(){
 
         return "admin/editBlog";
