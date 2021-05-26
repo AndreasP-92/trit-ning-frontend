@@ -7,6 +7,7 @@ const description = document.getElementById('description');
 const image = document.getElementById('image');
 const title = document.getElementById('title');
 const GetReviewUrl  = 'http://localhost:5002/select/blog/'+ urlId;
+const editor = document.getElementById('editor');
 
 thePath = window.location.pathname;
 const urlTitle = thePath.substring(thePath.lastIndexOf('/')+1)
@@ -23,17 +24,21 @@ const requestOptions = {
     redirect: 'follow'
     };
 
-        fetch(myUrl, requestOptions)
+        fetch(GetReviewUrl, requestOptions)
             .then(response => response.json)
             .then(data =>{
-                insertBlogData();
-                console.log(data)
+                // insertBlogData();
+                console.log(data.author)
+                author.value = data.author
+                editor.innerHTML = data.description
+            }).catch(function (error){
+            console.log(error)
 
             })
 
-        function insertBlogData(){
-
-        }
+        // function insertBlogData(){
+        //
+        // }
 
 thisForm.addEventListener('submit',async function (e) {
     e.preventDefault();
@@ -45,7 +50,7 @@ thisForm.addEventListener('submit',async function (e) {
         fetch('http://localhost:5002/edit/blog', {
             method: 'PUT',
             body: JSON.stringify({
-
+                'id':   urlId,
                 'title': title.value,
                 'description': editorCopy.value,
                 'img': img.value,
