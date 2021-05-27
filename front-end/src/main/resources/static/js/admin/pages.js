@@ -1,4 +1,7 @@
-
+const editor        = document.getElementById('editor');
+const deleteButton  = document.getElementById('deleteButton')
+const author        = document.getElementById("author");
+const editorCopy    = document.getElementById("editorCopy");
 
 //    ==================================================== GET ACTIVITY ================================================
 const myUrl = `http://localhost:5002/select/activities`;
@@ -43,7 +46,6 @@ function fillTbody(item, index) {
     // === CREATE TH ===
     let th1 = document.createElement('th');
     th1.textContent = item.title;
-
     tr.appendChild(th1);
 
     // === CREATE TD ===
@@ -68,7 +70,6 @@ function fillTbody(item, index) {
 
 function deletePage(id) {
     if (confirm("Vil du slette siden ?")) {
-        // alert("test")
         const requestOptions = {
             'content-type': 'application/json',
             method: 'DELETE',
@@ -82,13 +83,92 @@ function deletePage(id) {
             })
             .catch(err => {
                 window.location.href = "/admin/view/pages"
-
             });
     } else {
     }
 
 }
 
+//    ==================================================== GET REVIEW  =========================================
+
+const GetReviewUrl  = 'http://localhost:5002/select/all/reviews';
+
+fetch(GetReviewUrl ,requestOptions)
+    .then(response => response.json())
+    .then(data => {
+        data.forEach(fillTbodyReview)
+        console.log(data)
+    }).catch(function (error){
+    console.log(error)
+})
+
+
+//    ==================================================== FILL REVIEW TBODY =========================================
+function fillTbodyReview(item, index) {
+    const tbodyR = document.querySelector('.tbodyR')
+    console.log(index)
+    console.log(item.id)
+
+
+    // === CREATE TR ===
+    let tr = document.createElement('tr');
+    tr.setAttribute('align', 'center');
+    tbodyR.appendChild(tr);
+
+    // === CREATE TH ===
+    let th = document.createElement('th');
+    th.textContent = item.id;
+    tr.appendChild(th);
+
+    // === CREATE TH ===
+    let th1 = document.createElement('th');
+    th1.textContent = item.author;
+    tr.appendChild(th1);
+
+    // === CREATE TD ===
+    let td = document.createElement('td');
+    td.setAttribute('align', 'center');
+    tr.appendChild(td);
+
+    // === CREATE a ===
+    let a = document.createElement('a');
+    a.setAttribute('class', 'mt-3 w-10 btn btn-info');
+    a.textContent = "Rediger";
+    td.appendChild(a);
+
+    // === CREATE a1 ===
+    let deleteButton = document.createElement('button');
+    deleteButton.setAttribute('class', 'mt-3 w-10 btn btn-danger');
+    deleteButton.setAttribute("onclick", `deleteReview(${item.id})`);
+    deleteButton.textContent = "slet";
+    td.appendChild(deleteButton);
+}
+
+function deleteReview(id) {
+    if (confirm("vil du slette udtalelsen ?")){
+        fetch(`http://localhost:5002/delete/review/${id}`, {
+            method: 'POST',
+            body: JSON.stringify({
+                'author': author.value,
+            }),
+            headers: {
+                'Content-type': 'application/json'
+            }
+        }).then(function (response) {
+            if (response.ok) {
+                return response.json()
+            }
+            return Promise.reject(response);
+        }).then(function (data) {
+            console.log("AFTER INSERT=========", data.author)
+            console.log(data)
+
+        }).catch(function (error) {
+            console.warn('Something went wrong.', error)
+            window.location.href = "/admin/view/pages"
+        });
+    }
+}
 
 
 

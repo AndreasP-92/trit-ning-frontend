@@ -13,13 +13,13 @@ const GetPageUrl = `http://localhost:5002/select/activity/${urlTitle}`;
 
 console.log(urlTitle)
 
-const requestOptions2 = {
+const requestOptions = {
     'content-type': 'application/json',
     method: 'GET',
     redirect: 'follow'
 }
 
-fetch(GetPageUrl, requestOptions2)
+fetch(GetPageUrl, requestOptions)
     .then(response => response.json())
     .then(data => {
         insertPageData(data);

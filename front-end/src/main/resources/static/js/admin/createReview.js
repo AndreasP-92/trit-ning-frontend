@@ -34,7 +34,7 @@ console.log(description.value)
 
                 'author': author.value,
                 'description': description.value,
-                // 'reviewImage': reviewImage.files[0].name,
+                'reviewImage': reviewImage.files[0].name,
             }),
             headers: {
                 'Content-type': 'application/json'
@@ -49,7 +49,7 @@ console.log(description.value)
             console.log("AFTER INSERT=========", data.author)
             console.log(data)
 
-            // window.location.href = "/admin/index"
+            window.location.href = "/admin/index"
         }).catch(function (error) {
             console.warn('Something went wrong.', error);
         });
