@@ -48,7 +48,7 @@ async function updateAbout(){
     if (editorCopy.value == ""){
 
         init = {
-            method: 'PUT',
+            method: 'POST',
             body: JSON.stringify({
 
                 'id'        : urlId,
@@ -64,13 +64,13 @@ async function updateAbout(){
 
     }else if (editorCopy.value != ""){
         init = {
-            method: 'PUT',
+            method: 'POST',
             body: JSON.stringify({
 
                 'id'         : urlId,
                 'title'      : title.value,
                 'description': editorCopy.value,
-                'aboutImg'   : img.files[0].name,
+                // 'aboutImg'   : img.files[0].name,
 
             }),
             headers: {
@@ -81,7 +81,7 @@ async function updateAbout(){
 
     console.log(init)
 
-    fetch(`http://localhost:5002/edit/about/{id}`,init)
+    fetch(`http://localhost:5002/edit/about/`,init)
         .then(function (response) {
             if (response.ok) {
                 return response.json();
