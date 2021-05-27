@@ -2,7 +2,16 @@ const reviewImage   = document.getElementById("reviewImage");
 const author        = document.getElementById("author");
 const editorCopy    = document.getElementById("editorCopy");
 const thisForm      = document.getElementById("thisForm");
-const editor = document.getElementById('editor');
+const editor        = document.getElementById('editor');
+const formData      = new FormData();
+
+//==============================================FORM EVENT LISTENER=====================================================
+thisForm.addEventListener('submit',async function (e){
+    e.preventDefault();
+
+    await updateReview();
+
+})
 
 thePath = window.location.pathname;
 const urlId = thePath.substring(thePath.lastIndexOf('/')+1)
@@ -30,14 +39,6 @@ function insertReviewData(data){
     editor.innerHTML = data.description
     console.log(data.description)
 }
-
-//==============================================FORM EVENT LISTENER=====================================================
-thisForm.addEventListener('submit',async function (e){
-    e.preventDefault();
-
-    await updateReview();
-
-})
 
 async function updateReview(){
 
@@ -79,7 +80,7 @@ async function updateReview(){
         }
     }
 
-    console.log(init)
+    // console.log(init)
 
     fetch(`http://localhost:5002/edit/review`,init)
     .then(function (response) {
@@ -92,8 +93,34 @@ async function updateReview(){
         console.log("AFTER INSERT=========", data.author)
         console.log(data)
 
-        window.location.href = "/admin/index"
+        updateImage(data);
+
+        // window.location.href = "/admin/index"
     }).catch(function (error) {
         console.warn('Something went wrong.', error);
     });
+}
+
+function updateImage(data){
+    formData.append("imageFile", reviewImage.files[0]);
+    formData.append("author_id", data.id)
+    console.log("DATA======="+data);
+
+    const URL1 = "http://localhost:5002/image/update"
+
+    const requestOptions = {
+        'content-type': 'multipart/form-data',
+        method: 'POST',
+        redirect: 'follow',
+        body: formData
+
+    };
+
+    fetch(URL1, requestOptions)
+        .then(function (response) {
+            console.log(response);
+        })
+        .catch(function (response) {
+            console.log(response);
+        });
 }

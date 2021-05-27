@@ -37,19 +37,19 @@
                     </p>
                 </div>
             </div>
-                <form>
+                <form id="thisForm">
                     <div class="row">
                         <div class="col ml-5 mr-1 pb-3 mt-5 desktopInput">
-                            <input placeholder="Fornavn" type="text" class="form-control" >
+                            <input placeholder="Fornavn" type="text" id="firstname" class="form-control" >
                         </div>
 
                         <div class="col ml-1 mr-5 pb-3 mt-5 desktopInput">
-                            <input placeholder="Efternavn" type="text" class="form-control" >
+                            <input placeholder="Efternavn" type="text" id="lastname" class="form-control" >
                         </div>
                     </div>
 
                     <div class="mobileInput ml-5 pb-3 mr-5" style="display: none">
-                        <input placeholder="Fornavn" type="text" class="form-control" >
+                        <input placeholder="Fornavn"  type="text" class="form-control" >
                     </div>
 
                     <div class="mobileInput ml-5 pb-3 mr-5" style="display: none">
@@ -57,15 +57,15 @@
                     </div>
 
                     <div class="form-group ml-5 mr-5">
-                        <input placeholder="Email" name="" type="email" required class="form-control">
+                        <input placeholder="Email" id="mail" type="email" required class="form-control">
                     </div>
 
                     <div class="form-group ml-5 mr-5">
-                        <input placeholder="Emne" name="" type="text" required class="form-control">
+                        <input placeholder="Emne" id="topic" type="text" required class="form-control">
                     </div>
 
                     <div class="form-group ml-5 mr-5">
-                        <textarea placeholder="Besked" name="" required class="form-control"></textarea>
+                        <textarea placeholder="Besked" id="message" required class="form-control"></textarea>
                     </div>
 
                     <!--=================== Submit button ============================ -->
@@ -76,4 +76,6 @@
     <!--=================== Footer ============================ -->
     <div th:replace="fragments/footer :: footerFragment"></div>
     </body>
+<script src="/js/admin/createReview.js"></script>
+
     </html>
