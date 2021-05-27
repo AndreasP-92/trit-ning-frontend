@@ -6,7 +6,7 @@ const editorCopy    = document.getElementById('editorCopy');
 const getImage      = document.getElementById('getImage')
 const displayImage  = document.getElementById('displayImage')
 const formData      = new FormData();
-const formData2     = new FormData
+const formData2     = new FormData();
 
 
 // ============ GET IMAGE EVENT LISTENER ==========
@@ -28,6 +28,7 @@ getImage.addEventListener("click", function(e){
             return response.blob();
         })
         .then(data => {
+
             console.log(data)
             displayImage.src = URL.createObjectURL(data);
         })
@@ -43,16 +44,16 @@ thisForm.addEventListener('submit',async function (e) {
     e.preventDefault();
 
     await getPages();
-    await insertBannerImage(bannerImg)
-    await insertImage(img)
 })
 
 // ============ INSERT IMAGE FUNC
 async function insertImage (data){
-    formData.append("imageFile", data.files[0]);
+    formData.append("imageFile", img.files[0]);
+    formData.append("author_id", "0")
+    formData.append("page_id", data.id)
 
     // console.log(formData.get("imageFile"))
-    console.log(data.files[0]);
+    console.log(img.files[0]);
 
     const URL1 = "http://localhost:5002/image/upload"
 
@@ -75,10 +76,13 @@ async function insertImage (data){
 
 // ============ INSERT BANNER IMG FUNC
 async function insertBannerImage(data){
-    formData2.append("imageFile", data.files[0]);
+    formData2.append("imageFile", bannerImg.files[0]);
+    formData2.append("author_id", "0")
+    formData2.append("page_id", data.id)
+
 
     // console.log(formData.get("imageFile"))
-    console.log(data.files[0]);
+    console.log(bannerImg.files[0]);
 
     const URL1 = "http://localhost:5002/image/upload"
 
@@ -119,7 +123,22 @@ async function insertPage(){
         }
 
     }
+    fetch(url, requestOptions)
+        .then(function (response) {
+            if (response.ok) {
+                return response.json();
+                console.log(response)
+            }
+            return Promise.reject(response);
+        }).then(function (data) {
+            insertBannerImage(data)
+            insertImage(data)
+            console.log("AFTER INSERT=========", data.author)
 
+            // window.location.href = "/admin/index"
+        }).catch(function (error) {
+            console.warn('Something went wrong.', error);
+        });
 
 }
 
