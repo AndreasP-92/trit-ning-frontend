@@ -7,7 +7,7 @@ const editor = document.getElementById('editor');
 thePath = window.location.pathname;
 const urlId = thePath.substring(thePath.lastIndexOf('/')+1)
 
-const GetReviewUrl  = 'http://localhost:5002/select/review/'+ urlId;
+const GetReviewUrl  = `http://localhost:5002/select/review/${urlId}`;
 
 const requestOptions = {
     'content-type': 'application/json',
@@ -20,6 +20,7 @@ fetch(GetReviewUrl ,requestOptions)
     .then(data => {
         insertReviewData(data)
         console.log(data.author)
+        console.log(data)
     }).catch(function (error){
         console.log(error)
 })
@@ -69,7 +70,7 @@ async function updateReview(){
                 'id'         : urlId,
                 'author'     : author.value,
                 'description': editorCopy.value,
-                'reviewImage': reviewImage.files[0].name
+                'reviewImage': reviewImage.files[0].name,
 
             }),
             headers: {

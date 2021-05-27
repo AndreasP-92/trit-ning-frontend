@@ -73,6 +73,12 @@ public class MainController {
 
         return "/admin/adminIndex";
     }
+
+    @GetMapping("/admin/create/admin")
+    public String adminCreateAdmin(){
+
+        return "/admin/createAdmin";
+    }
     // ***** ADMIN BLOG
 
     @GetMapping("/admin/view/blogpost")
@@ -90,7 +96,7 @@ public class MainController {
     @GetMapping("/admin/edit/{blog}")
     public String adminEditBlog(){
 
-        return "";
+        return "/admin/viewBlogs";
     }
 
     // ***** ADMIN PAGES
