@@ -14,7 +14,7 @@ thisForm.addEventListener('submit', async function (e) {
     }else if(password.value == password2.value){
         await insertUser();
         await insertAuth();
-        window.location.href = "/admin/index"
+        // window.location.href = "/admin/index"
     }
 
 });
@@ -28,7 +28,6 @@ async function insertUser(){
             'enabled'   : 1,
             'mail'      : mail.value,
             'password'  : password.value,
-            'role'      : userrole.value,
         }),
         headers: {
             'Content-type': 'application/json; charset=UTF-8'
