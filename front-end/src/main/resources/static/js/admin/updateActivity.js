@@ -44,13 +44,9 @@ thisForm.addEventListener('submit',async function (e) {
 
 async function updateActivity() {
 
-    console.log(editorCopy.value)
-    const urlUpdatePage = `http://localhost:5002/edit/activity/${urlTitle}`;
-
     let init;
 
     if (editorCopy.value == ""){
-
          init = {
             method: 'PUT',
             body: JSON.stringify({
@@ -81,11 +77,8 @@ async function updateActivity() {
                 'Content-type': 'application/json'
             }
         }
+        console.log(init)
     }
-
-    console.log(init)
-
-
 
     fetch(`http://localhost:5002/edit/activity`,init)
         .then(function (response) {
