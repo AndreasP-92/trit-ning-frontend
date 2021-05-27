@@ -140,4 +140,14 @@ public class MainController {
     public String adminViewAdmin(){
         return "admin/viewAdmins";
     }
+
+    @GetMapping("/admin/create/about")
+    public String createAbout(){
+        return "admin/createAbout";
+    }
+
+    @GetMapping("/admin/edit/about/{id}")
+    public String editAbout(){
+        return "admin/editAbout";
+    }
 }
