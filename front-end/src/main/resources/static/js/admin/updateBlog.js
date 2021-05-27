@@ -47,33 +47,54 @@ const requestOptions = {
 async function updateBlog() {
 
     let today = new Date();
-    let date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+    let date = today.getDate()+'-'+(today.getMonth()+1)+'-'+today.getFullYear();
 
     console.log(editorCopy.value)
     const urlUpdateBlog = `http://localhost:5002/edit/blog/${urlTitle}`;
 
-    const requestOptions4 = {
+    let init;
+
+    if (editorCopy.value == ""){
+
+        init = {
+            method: 'PUT',
+            body: JSON.stringify({
+                'id': id.value,
+                'title': title.value,
+                // 'description': editorCopy.value,
+                'img': img.value,
+                'datetime': date,
+                'author': author.value,
+
+            }),
+            headers: {
+                'Content-type': 'application/json'
+            }
+        }
+        }else if (editorCopy.value!=""){
+            init = {
+                method: 'PUT',
+                body: JSON.stringify({
+                    'id'   : id.value,
+                    'title': title.value,
+                    'description': editorCopy.value,
+                    'img': img.value,
+                    'datetime': date,
+                    'author': author.value,
+
+                }),
+                headers: {
+                    'Content-type': 'application/json'
+                }
+
+        }
 
     }
 
-    console.log(requestOptions4)
+    console.log(init)
 
-    fetch(`http://localhost:5002/edit/blog`,{
+    fetch(`http://localhost:5002/edit/blog`,init)
 
-        method: 'PUT',
-        body: JSON.stringify({
-            'id'   : id.value,
-            'title': title.value,
-            'description': editorCopy.value,
-            'img': img.value,
-            'datetime': date,
-            'author': author.value,
-
-    }),
-        headers: {
-        'Content-type': 'application/json'
-    }
-})
 .then(function (response) {
     if (response.ok) {
         return response.json();
