@@ -1,37 +1,3 @@
-jQuery(document).ready(function($) {
-    /** ******************************
-     * Simple WYSIWYG
-     ****************************** **/
-    $('#editControls a').click(function(e) {
-        e.preventDefault();
-        switch($(this).data('role')) {
-            case 'h1':
-            case 'h2':
-            case 'h3':
-            case 'p':
-                document.execCommand('formatBlock', false, $(this).data('role'));
-                break;
-            default:
-                document.execCommand($(this).data('role'), false, null);
-                break;
-        }
-
-        var textval = $("#editor").html();
-        $("#description").val(textval);
-    });
-
-    $("#editor").keyup(function() {
-        var value = $(this).html();
-        $("#description").val(value);
-    }).keyup();
-
-    $('#checkIt').click(function(e) {
-        e.preventDefault();
-        alert($("#description").val());
-    });
-});
-
-
 const reviewImage   = document.getElementById("reviewImage");
 const author        = document.getElementById("author");
 const description   = document.getElementById("description");
