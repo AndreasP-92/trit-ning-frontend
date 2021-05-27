@@ -49,6 +49,19 @@
                 <input type="password" class="form-control" id="confirm_password" required placeholder="Bekræft Kodeord">
             </div>
 
+            <!--             USER ROLE -->
+            <div class="form-group ml-5 mr-5">
+                <label for="role">Brugerrolle</label>
+                <div class="col-sm-12 "><select name="role" id="role" class="roleSelector form-control">
+                    <option>Vælg rolle</option>
+                    <option value="ROLE_ADMIN">ROLE_ADMIN</option>
+                    <option value=""></option>
+
+                </select>
+                </div>
+            </div>
+
+            <!--              SUBMIT -->
             <button  type="submit" id="submitButton" class="w-50 btn form-button ml-5 mr-5">Opret Bruger</button>
 
         </form>
@@ -56,5 +69,6 @@
 </main>
 </body>
 
-<script></script>
+<script src="/js/admin/createAdmin.js"></script>
+
 </html>
