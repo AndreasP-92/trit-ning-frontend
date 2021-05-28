@@ -46,29 +46,28 @@ async function insertUser(){
     })
 }
 
-// ========= INSERT ROLE ==========
-
-async function insertAuth(){
-    await fetch('http://localhost:5002/insert/admin/auth',{
-        method: 'POST',
-        body: JSON.stringify({
-            'mail'  : mail.value,
-            'role'  : userrole.value,
-
-        }),
-        headers: {
-            'Content-type': 'application/json; charset=UTF-8'
-        }
-    }).then(function (response) {
-        if (response.ok) {
-            return response.json();
-        }
-        return Promise.reject(response);
-    }).then(function (data) {
-        console.log(data)
-    }).catch(function (error) {
-        console.warn('Something went wrong.', error);
-
-
-    })
-}
+// // ========= INSERT ROLE ==========
+//
+// async function insertAuth(){
+//     await fetch('http://localhost:5002/insert/admin/auth',{
+//         method: 'POST',
+//         body: JSON.stringify({
+//             'role'  : userrole.value,
+//
+//         }),
+//         headers: {
+//             'Content-type': 'application/json; charset=UTF-8'
+//         }
+//     }).then(function (response) {
+//         if (response.ok) {
+//             return response.json();
+//         }
+//         return Promise.reject(response);
+//     }).then(function (data) {
+//         console.log(data)
+//     }).catch(function (error) {
+//         console.warn('Something went wrong.', error);
+//
+//
+//     })
+// }
