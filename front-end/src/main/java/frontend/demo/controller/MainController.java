@@ -96,7 +96,7 @@ public class MainController {
     @GetMapping("/admin/edit/blog/{title}")
     public String adminEditBlog(){
 
-        return "/admin/viewBlogs";
+        return "/admin/editBlog";
     }
 
     // ***** ADMIN PAGES
