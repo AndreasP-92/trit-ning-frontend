@@ -1,9 +1,10 @@
-const thisForm = document.getElementById('thisForm');
-const author = document.getElementById('author');
-const image = document.getElementById('image');
-const title = document.getElementById('title');;
-const editor = document.getElementById('editor');
+const thisForm   = document.getElementById('thisForm');
+const author     = document.getElementById('author');
+const image      = document.getElementById('image');
+const title      = document.getElementById('title');;
+const editor     = document.getElementById('editor');
 const editorCopy = document.getElementById('editorCopy')
+const formData   = new FormData();
 
 // ============== INSERT BLOG ==============
 
@@ -13,6 +14,34 @@ thisForm.addEventListener('submit',async function (e) {
        await getBlog();
 })
 
+// ============ INSERT IMAGE FUNC
+async function insertImage(data){
+    formData.append("imageFile", img.files[0]);
+    formData.append("author_id", "0")
+    formData.append("page_id", "0")
+    formData.append("blog_id",data.id)
+
+    console.log(img.files[0]);
+
+    const URL2 = "http://localhost:5002/image/upload"
+
+    const requestOptions2 = {
+        'content-type': 'multipart/form-data',
+        method: 'POST',
+        redirect: 'follow',
+        body: formData
+    };
+
+    fetch(URL2, requestOptions2)
+        .then(function(response){
+            console.log(response);
+        })
+        .catch(function (response){
+            console.log(response);
+        });
+}
+
+// ============ INSERT PAGE FUNC
 async function insertBlog() {
 
     let today = new Date();
@@ -44,6 +73,7 @@ async function insertBlog() {
             }
             return Promise.reject(response);
         }).then(function (data) {
+            insertImage(data)
         console.log("AFTER INSERT=========",data.title)
         console.log(data)
 
