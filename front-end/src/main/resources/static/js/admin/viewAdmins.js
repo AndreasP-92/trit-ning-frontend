@@ -1,12 +1,12 @@
 const thisForm  = document.getElementById('registerForm');
 const mail      = document.getElementById('email');
 const role  = document.getElementById('role');
-
+const id = document.getElementById('id');
 
 
 // ============== GET USER ==============
 
-const mail = "kim@tritraening.dk";
+// const mail = "kim@tritraening.dk";
 const myUrl = `http://localhost:5002/select/users`;
 
 const requestOptions = {
@@ -15,57 +15,77 @@ const requestOptions = {
     redirect: 'follow'
 };
 
-fetch(myUrl, requestOptions)
-    .then(response => response.json())
-    .then(data => {
-        gotUsers(data)
+
+    fetch(myUrl, requestOptions)
+        .then(response = function(response){
+
+            return response.json;
+        })
+        .then(data => {
+            data.forEach(fillTbody)
+
+        }).catch(error = function(error){
+            console.log(error)
     })
 
 
 
-function gotUsers(data){
-    mail.value = data.mail;
-    role.value = data.role;
-}
 //    ==================================================== FILL ACTIVITY TBODY =========================================
 function fillTbody(item, index) {
-    const tbody = document.querySelector('.tbody')
+   const tBody = document.querySelector('tbody')
 
-
-    // === CREATE TR ===
+    //---------- TR -----------------
     let tr = document.createElement('tr');
-    tr.setAttribute('align', 'center');
-    tbody.appendChild(tr);
+    tr.setAttribute('align','center');
+    tBody.appendChild(tr);
 
-    // === CREATE TH ===
+    //---------- TH -----------------
     let th = document.createElement('th');
     th.textContent = item.id;
     tr.appendChild(th);
 
-    // === CREATE TH ===
-    let th1 = document.createElement('th');
+    //---------- TH -----------------
+    let th1 = document.createElement('th1');
     th1.textContent = item.mail;
     tr.appendChild(th1);
 
-    // === CREATE TH ===
-    let th2 = document.createElement('th');
-    th2.textContent = item.role;
-    tr.appendChild(th2);
-
-    // === CREATE TD ===
+    //---------- TD -----------------
     let td = document.createElement('td');
-    td.setAttribute('align', 'center');
+    td.setAttribute('align','center');
     tr.appendChild(td);
 
-    // === CREATE a ===
+    //---------- A -----------------
     let a = document.createElement('a');
     a.setAttribute('class', 'mt-3 w-10 btn btn-info');
-    a.textContent = "Rediger";
-    td.appendChild(a);
+    a.href="/#";
 
-    // === CREATE a1 ===
+    //---------- A -----------------
     let a1 = document.createElement('a');
     a1.setAttribute('class', 'mt-3 w-10 btn btn-danger');
-    a1.textContent = "slet";
-    td.appendChild(a1);
+    a1.setAttribute('onclick',`deleteUser(${id})`);
+    a1.href="/#";
+
+
+}
+
+function deleteUser(id) {
+    if (confirm("vil du slette denner bruger ?")){
+        fetch(`http://localhost:5002/delete/user/${id}`, {
+            method: 'POST',
+            body: JSON.stringify({
+                'id': id.value,
+            }),
+            headers: {
+                'Content-type': 'application/json'
+            }
+        }).then(function (response) {
+            if (response.ok) {
+                return response.json()
+            }
+            return Promise.reject(response);
+        }).catch(function (error) {
+            console.warn('Something went wrong.', error)
+            // window.location.href = "/admin/view/pages"
+        });
+    }
 }
