@@ -82,7 +82,7 @@ async function updateReview(){
 
     // console.log(init)
 
-    fetch(`http://localhost:5002/edit/review`,init)
+    fetch(`http://localhost:5002/edit/review/`,init)
     .then(function (response) {
         if (response.ok) {
             return response.json();
