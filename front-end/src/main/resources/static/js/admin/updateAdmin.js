@@ -43,11 +43,8 @@ function insertUserData(data){
 
 async function updateUser() {
 
-    let today = new Date();
-    let date = today.getDate()+'-'+(today.getMonth()+1)+'-'+today.getFullYear();
 
-    console.log(editorCopy.value)
-    const urlUpdateBlog = `http://localhost:5002/edit/blog/${urlTitle}`;
+    const urlUpdateUser = `http://localhost:5002/edit/user/${urlTitle}`;
 
     let init;
 
@@ -57,11 +54,9 @@ async function updateUser() {
             method: 'PUT',
             body: JSON.stringify({
                 'id': id.value,
-                'title': title.value,
-                // 'description': editorCopy.value,
-                'img': img.value,
-                'datetime': date,
-                'author': author.value,
+                'mail': mail.value,
+                'role': role.value,
+
 
             }),
             headers: {
@@ -72,12 +67,9 @@ async function updateUser() {
         init = {
             method: 'PUT',
             body: JSON.stringify({
-                'id'   : id.value,
-                'title': title.value,
-                'description': editorCopy.value,
-                'img': img.value,
-                'datetime': date,
-                'author': author.value,
+                'id': id.value,
+                'mail': mail.value,
+                'role': role.value,
 
             }),
             headers: {
@@ -90,7 +82,7 @@ async function updateUser() {
 
     console.log(init)
 
-    fetch(`http://localhost:5002/edit/blog`,init)
+    fetch(`http://localhost:5002/edit/user`,init)
 
         .then(function (response) {
             if (response.ok) {

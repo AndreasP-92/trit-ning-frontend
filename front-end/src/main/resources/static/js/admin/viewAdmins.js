@@ -59,13 +59,15 @@ function fillTbody(item, index) {
     let a = document.createElement('a');
     a.setAttribute('class', 'mt-3 w-10 btn btn-info');
     a.href="/#";
+    a.textContent = "Rediger Admin";
+    td.appendChild(a);
 
     //---------- A -----------------
     let a1 = document.createElement('a');
     a1.setAttribute('class', 'mt-3 w-10 btn btn-danger');
     a1.setAttribute('onclick',`deleteUser(${item.id})`);
     // a1.href="/#";
-    a1.textContent = "slet";
+    a1.textContent = "Slet";
     td.appendChild(a1);
 
 
@@ -92,26 +94,3 @@ function deleteUser(id) {
         });
     }
 }
-
-// function deleteUser(id) {
-//     if (confirm("vil du slette denner bruger ?")) {
-//         // alert("test")
-//         const requestOptions = {
-//             'content-type': 'application/json',
-//             method: 'DELETE',
-//             redirect: 'follow'
-//         };
-//         const url = `http://localhost:5002/delete/user/${id}`
-//         console.log(id)
-//         fetch(url,requestOptions)
-//             .then(res => res.json())
-//             .then(data => {
-//             })
-//             .catch(err => {
-//                 window.location.href = "/admin/view/admins"
-//
-//             });
-//     } else {
-//     }
-//
-// }
