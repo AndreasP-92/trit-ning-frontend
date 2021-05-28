@@ -13,8 +13,7 @@ thisForm.addEventListener('submit', async function (e) {
         document.getElementById('passwordValid').innerHTML = "Password skal være ens!";
     }else if(password.value == password2.value){
         await insertUser();
-        await insertAuth();
-        // window.location.href = "/admin/index"
+        window.location.href = "/admin/index"
     }
 
 });
@@ -45,29 +44,3 @@ async function insertUser(){
 
     })
 }
-
-// // ========= INSERT ROLE ==========
-//
-// async function insertAuth(){
-//     await fetch('http://localhost:5002/insert/admin/auth',{
-//         method: 'POST',
-//         body: JSON.stringify({
-//             'role'  : userrole.value,
-//
-//         }),
-//         headers: {
-//             'Content-type': 'application/json; charset=UTF-8'
-//         }
-//     }).then(function (response) {
-//         if (response.ok) {
-//             return response.json();
-//         }
-//         return Promise.reject(response);
-//     }).then(function (data) {
-//         console.log(data)
-//     }).catch(function (error) {
-//         console.warn('Something went wrong.', error);
-//
-//
-//     })
-// }
