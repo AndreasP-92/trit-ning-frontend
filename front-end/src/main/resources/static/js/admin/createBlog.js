@@ -1,6 +1,6 @@
 const thisForm   = document.getElementById('thisForm');
 const author     = document.getElementById('author');
-const image      = document.getElementById('image');
+const image      = document.getElementById('img');
 const title      = document.getElementById('title');;
 const editor     = document.getElementById('editor');
 const editorCopy = document.getElementById('editorCopy')
@@ -16,9 +16,10 @@ thisForm.addEventListener('submit',async function (e) {
 
 // ============ INSERT IMAGE FUNC
 async function insertImage(data){
-    formData.append("imageFile", img.files[0]);
+    formData.append("imageFile", image.files[0]);
     formData.append("author_id", "0")
     formData.append("page_id", "0")
+    formData.append("about_id", "0")
     formData.append("blog_id",data.id)
 
     console.log(img.files[0]);
@@ -54,11 +55,11 @@ async function insertBlog() {
 
         method: 'POST',
         body: JSON.stringify({
-            'title': title.value,
+            'title'      : title.value,
             'description': editorCopy.value,
             'img'        : img.files[0].name,
-            'datetime': date,
-            'author': author.value,
+            'datetime'   : date,
+            'author'     : author.value,
         }),
         headers: {
             'Content-type': 'application/json; charset=UTF-8'
@@ -77,7 +78,7 @@ async function insertBlog() {
         console.log("AFTER INSERT=========",data.title)
         console.log(data)
 
-        window.location.href = "/admin/index"
+        // window.location.href = "/admin/index"
     }).catch(function (error) {
         console.warn('Something went wrong.', error);
     });
