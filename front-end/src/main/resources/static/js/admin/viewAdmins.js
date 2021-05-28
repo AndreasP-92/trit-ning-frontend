@@ -18,11 +18,12 @@ const requestOptions = {
 
     fetch(myUrl, requestOptions)
         .then(response = function(response){
-
-            return response.json;
+            return response.json();
         })
         .then(data => {
+            console.log(data)
             data.forEach(fillTbody)
+
 
         }).catch(error = function(error){
             console.log(error)
@@ -62,16 +63,18 @@ function fillTbody(item, index) {
     //---------- A -----------------
     let a1 = document.createElement('a');
     a1.setAttribute('class', 'mt-3 w-10 btn btn-danger');
-    a1.setAttribute('onclick',`deleteUser(${id})`);
-    a1.href="/#";
+    a1.setAttribute('onclick',`deleteUser(${item.id})`);
+    // a1.href="/#";
+    a1.textContent = "slet";
+    td.appendChild(a1);
 
 
 }
 
 function deleteUser(id) {
     if (confirm("vil du slette denner bruger ?")){
-        fetch(`http://localhost:5002/delete/user/${id}`, {
-            method: 'POST',
+        fetch(`http://localhost:5002/delete/user/${item.id}`, {
+            method: 'DELETE',
             body: JSON.stringify({
                 'id': id.value,
             }),
@@ -89,3 +92,26 @@ function deleteUser(id) {
         });
     }
 }
+
+// function deleteUser(id) {
+//     if (confirm("vil du slette denner bruger ?")) {
+//         // alert("test")
+//         const requestOptions = {
+//             'content-type': 'application/json',
+//             method: 'DELETE',
+//             redirect: 'follow'
+//         };
+//         const url = `http://localhost:5002/delete/user/${id}`
+//         console.log(id)
+//         fetch(url,requestOptions)
+//             .then(res => res.json())
+//             .then(data => {
+//             })
+//             .catch(err => {
+//                 window.location.href = "/admin/view/admins"
+//
+//             });
+//     } else {
+//     }
+//
+// }
