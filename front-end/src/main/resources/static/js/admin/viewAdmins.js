@@ -75,7 +75,7 @@ function fillTbody(item, index) {
 
 function deleteUser(id) {
     if (confirm("vil du slette denner bruger ?")){
-        fetch(`http://localhost:5002/delete/user/${item.id}`, {
+        fetch(`http://localhost:5002/delete/user/${id}`, {
             method: 'DELETE',
             body: JSON.stringify({
                 'id': id.value,
