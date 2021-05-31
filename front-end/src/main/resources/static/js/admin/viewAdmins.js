@@ -73,24 +73,47 @@ function fillTbody(item, index) {
 
 }
 
+// function deleteUser(id) {
+//     if (confirm("vil du slette denner bruger ?")){
+//         fetch(`http://localhost:5002/delete/user/${id}`, {
+//             method: 'DELETE',
+//             redirect: 'follow',
+//             // mode: "no-cors",
+//             body: JSON.stringify({
+//                 // 'id': id.value,
+//             }),
+//             headers: {
+//                 'Content-type': 'application/json'
+//             }
+//         }).then(function (response) {
+//             if (response.ok) {
+//                 return response.json()
+//             }
+//             return Promise.reject(response);
+//         }).catch(function (error) {
+//             console.warn('Something went wrong.', error)
+//             // window.location.href = "/admin/view/pages"
+//         });
+//     }
+// }
+
 function deleteUser(id) {
-    if (confirm("vil du slette denner bruger ?")){
-        fetch(`http://localhost:5002/delete/user/${id}`, {
+    if (confirm("vil du slette denner bruger ?")) {
+        const requestOptions = {
+            'content-type': 'application/json',
             method: 'DELETE',
-            body: JSON.stringify({
-                'id': id.value,
-            }),
-            headers: {
-                'Content-type': 'application/json'
-            }
-        }).then(function (response) {
-            if (response.ok) {
-                return response.json()
-            }
-            return Promise.reject(response);
-        }).catch(function (error) {
-            console.warn('Something went wrong.', error)
-            // window.location.href = "/admin/view/pages"
-        });
+            redirect: 'follow'
+        };
+        const url = `http://localhost:5002/delete/user/${id}`
+        console.log(id)
+        fetch(url,requestOptions)
+            .then(res => res.json())
+            .then(data => {
+            })
+            .catch(err => {
+                window.location.href = "/admin/view/admins"
+            });
+    } else {
     }
+
 }

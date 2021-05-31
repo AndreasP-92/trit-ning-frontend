@@ -9,7 +9,7 @@ const editorCopy = document.getElementById('editorCopy');
 thePath = window.location.pathname;
 const urlTitle = thePath.substring(thePath.lastIndexOf('/')+1)
 
-const GetPageUrl = `http://localhost:5002/select/activity/${urlTitle}`;
+const GetPageUrl = `http://localhost:5002/select/page/${urlTitle}`;
 
 console.log(urlTitle)
 
@@ -38,11 +38,11 @@ function insertPageData(data){
 thisForm.addEventListener('submit',async function (e) {
     e.preventDefault();
 
-    await updateActivity();
+    await updatePage();
 
 })
 
-async function updateActivity() {
+async function updatePage() {
 
     let init;
 
@@ -80,7 +80,7 @@ async function updateActivity() {
         console.log(init)
     }
 
-    fetch(`http://localhost:5002/edit/activity`,init)
+    fetch(`http://localhost:5002/edit/page`,init)
         .then(function (response) {
             if (response.ok) {
                 return response.json();
@@ -95,4 +95,5 @@ async function updateActivity() {
     }).catch(function (error) {
         console.warn('Something went wrong.', error);
     });
+
 }

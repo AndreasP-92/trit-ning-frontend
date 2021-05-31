@@ -49,7 +49,7 @@ async function updateReview(){
     if (editorCopy.value == ""){
 
         init = {
-            method: 'PUT',
+            method: 'POST',
             body: JSON.stringify({
 
                 'id'         : urlId,
@@ -65,7 +65,7 @@ async function updateReview(){
 
     }else if (editorCopy.value != ""){
         init = {
-            method: 'PUT',
+            method: 'POST',
             body: JSON.stringify({
 
                 'id'         : urlId,

@@ -4,7 +4,7 @@ const author        = document.getElementById("author");
 const editorCopy    = document.getElementById("editorCopy");
 
 //    ==================================================== GET ACTIVITY ================================================
-const myUrl = `http://localhost:5002/select/activities`;
+const myUrl = `http://localhost:5002/select/pages`;
 
 const requestOptions = {
      'content-type': 'application/json',
@@ -15,19 +15,17 @@ const requestOptions = {
 fetch(myUrl, requestOptions)
     .then(response => response.json())
     .then(data => {
-        gotActivityData(data)
+        gotPageData(data)
 
     }).catch(async function(e){
         console.log(e);
     })
 
-function gotActivityData(data){
+function gotPageData(data){
     data.forEach(fillTbody)
 }
 
-
-
-//    ==================================================== FILL ACTIVITY TBODY =========================================
+//    ==================================================== FILL PAGE TBODY =========================================
 function fillTbody(item, index) {
     const tbody = document.querySelector('.tbody')
     console.log(item.id)
@@ -56,17 +54,16 @@ function fillTbody(item, index) {
     // === CREATE a ===
     let a = document.createElement('a');
     a.setAttribute('class', 'mt-3 w-10 btn btn-info');
-    a.textContent = "Rediger";
+    a.textContent = "Rediger Side";
     td.appendChild(a);
 
     // === CREATE a1 ===
     let a1 = document.createElement('a');
     a1.setAttribute('class', 'mt-3 w-10 btn btn-danger');
     a1.setAttribute("onclick", `deletePage(${item.id})`);
-    a1.textContent = "slet";
+    a1.textContent = "Slet";
     td.appendChild(a1);
 }
-
 
 function deletePage(id) {
     if (confirm("Vil du slette siden ?")) {
@@ -75,7 +72,7 @@ function deletePage(id) {
             method: 'DELETE',
             redirect: 'follow'
         };
-        const url = `http://localhost:5002/delete/activity/${id}`
+        const url = `http://localhost:5002/delete/page/${id}`
         console.log(id)
         fetch(url,requestOptions)
             .then(res => res.json())
@@ -136,7 +133,7 @@ function fillTbodyReview(item, index) {
     a.textContent = "Rediger";
     td.appendChild(a);
 
-    // === CREATE a1 ===
+    // === CREATE deleteButton ===
     let deleteButton = document.createElement('button');
     deleteButton.setAttribute('class', 'mt-3 w-10 btn btn-danger');
     deleteButton.setAttribute("onclick", `deleteReview(${item.id})`);
@@ -147,7 +144,7 @@ function fillTbodyReview(item, index) {
 function deleteReview(id) {
     if (confirm("vil du slette udtalelsen ?")){
         fetch(`http://localhost:5002/delete/review/${id}`, {
-            method: 'POST',
+            method: 'DELETE',
             body: JSON.stringify({
                 'author': author.value,
             }),

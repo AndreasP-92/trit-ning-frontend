@@ -106,7 +106,7 @@ async function insertBannerImage(data){
 // ============ INSERT PAGE FUNC
 async function insertPage(){
 
-    let url = 'http://localhost:5002/insert/activity'
+    let url = 'http://localhost:5002/insert/page'
     let requestOptions = {
         method: 'POST',
         redirect: 'follow',
@@ -144,7 +144,7 @@ async function insertPage(){
 
 // ============ GET PAGES FUNC
 async function getPages (){
-    const myurl2 = `http://localhost:5002/select/activity/${title.value}`
+    const myurl2 = `http://localhost:5002/select/page/${title.value}`
     const requestOptions2 = {
         'content-type': 'application/json',
         method: 'GET',
