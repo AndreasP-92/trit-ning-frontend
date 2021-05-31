@@ -43,7 +43,6 @@ function insertUserData(data){
 
 async function updateUser() {
 
-
     const urlUpdateUser = `http://localhost:5002/edit/user/${urlTitle}`;
 
     let init;
