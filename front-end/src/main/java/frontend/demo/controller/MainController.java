@@ -35,28 +35,10 @@ public class MainController {
         return "user/about";
     }
 
-    @GetMapping("/page/swim")
-    public String activityswim() {
+    @GetMapping("/page/{title}")
+    public String activity() {
 
-        return "user/activityswim";
-    }
-
-    @GetMapping("/page/cycle")
-    public String activitycycle() {
-
-        return "user/activitycycle";
-    }
-
-    @GetMapping("/page/run")
-    public String activityrun() {
-
-        return "user/activityrun";
-    }
-
-    @GetMapping("/page/trx")
-    public String activitytrx() {
-
-        return "user/activitytrx";
+        return "user/page";
     }
 
 

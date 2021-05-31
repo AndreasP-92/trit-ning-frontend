@@ -1,16 +1,42 @@
-const pagesURL = `http://localhost:5002/select/activities`;
-const requestOptions ={
-    'content-type': 'application/json',
-    method: 'GET',
-    redirect: 'follow'
-};
+const title = document.getElementById('title');
 
-fetch(pagesURL,requestOptions)
-    .then(response = function (response){
-        return response.json;
-    })
-    .then(data =>{
-        data.forEach()
-    }).catch(error = function (error){
+getActivity()
+
+function getActivity(){
+    const pagesURL = `http://localhost:5002/select/activities`;
+    const requestOptions ={
+        'content-type': 'application/json',
+        method: 'GET',
+        redirect: 'follow'
+    };
+
+    fetch(pagesURL,requestOptions)
+        .then(response => response.json())
+        .then(data =>{
+            console.log(data)
+            data.forEach(fillList)
+        }).catch(error = function (error){
         console.log(error)
-})
+    })
+}
+
+
+function fillList(item, index){
+    const frontPageList = document.querySelector('#frontPageList')
+console.log(item)
+
+    // === CREATE li  ===
+
+    let li = document.createElement('li');
+    li.setAttribute('class', 'nav-item ml-5 mr-5')
+    frontPageList.appendChild(li);
+
+    // === CREATE ATAG ===
+
+    let a = document.createElement('a');
+    a.textContent = item.title;
+    a.setAttribute('class', 'nav-link text-truncate')
+    a.setAttribute('href', `/page/${item.title}`)
+    li.appendChild(a)
+}
+
