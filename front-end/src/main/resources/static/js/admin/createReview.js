@@ -69,9 +69,9 @@ async function getReview(author){
 // ============ INSERT IMAGE FUNC
 async function insertImage (data){
     formData.append("imageFile", reviewImage.files[0]);
-    // formData.append("author_name", author.value);
-    // formData.append("author_desc", description.value);
-
+    formData.append("page_id", "0")
+    formData.append("blog_id", "0")
+    formData.append("about_id", "0")
     formData.append("author_id", data.id)
     // formData.append("")
     console.log("DATA======="+data);

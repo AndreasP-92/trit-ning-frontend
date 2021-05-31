@@ -7,7 +7,7 @@
     <script src="https://kit.fontawesome.com/b6a1220657.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>Create User</title>
+    <title>Rediger Bruger</title>
     <link href="/css/user/fragments.css" type="text/css" rel="stylesheet">
     <link href="/css/admin/createAdmin.css" type="text/css" rel="stylesheet">
 </head>
@@ -23,43 +23,43 @@
 
     <div align="center">
 
-        <!-- === CREATE USER === -->
+<!-- === CREATE USER === -->
         <form class="contact w-50" action="" method="post" id="registerForm">
             <div class="valid" id="notFilled"></div>
+            <input disabled type="number" id="id">
 
-            <h3 class="text-center mb-2">Opret Bruger</h3>
+            <h3 class="text-center mb-2">Rediger Bruger</h3>
             <br>
-
-            <!--            USER EMAIL -->
+<!--            USER EMAIL -->
             <div class="form-group ml-5 mr-5">
-                <label for="email">E-mail</label>
-                <input class="form-control" type="email" id="email" required name="mail" placeholder="Email">
+                <label for="mail">E-mail</label>
+                <input class="form-control" type="email" id="mail" required name="mail" placeholder="Email">
             </div>
 
-            <!--            PASSWORD-->
+<!--            PASSWORD-->
             <div class="form-group ml-5 mr-5">
-                <label for="password">Password</label>
+                <label for="password">Nyt Kodeord</label>
                 <input type="password" class="form-control" id="password" name="password" required placeholder="Kodeord">
                 <div id="passwordValid" class="valid"></div>
             </div>
 
-            <!--            PASSWORD-->
+<!--            PASSWORD-->
             <div class="form-group ml-5 mr-5">
-                <label for="confirm_password">Confirm Password</label>
+                <label for="confirm_password">Bekræft Nyt Kodeord</label>
                 <input type="password" class="form-control" id="confirm_password" required placeholder="Bekræft Kodeord">
             </div>
 
             <!--             USER ROLE -->
-            <div class="form-group ml-5 mr-5">
-                <label for="role">Brugerrolle</label>
-                <div class="col-sm-12 "><select name="role" id="role" class="roleSelector form-control">
-                    <option>Vælg rolle</option>
-                    <option value="ROLE_ADMIN">ROLE_ADMIN</option>
-                    <option value=""></option>
+<!--            <div class="form-group ml-5 mr-5">-->
+<!--                <label for="role">Brugerrolle</label>-->
+<!--                <div class="col-sm-12 "><select name="role" id="role" class="roleSelector form-control">-->
+<!--                    <option>Vælg rolle</option>-->
+<!--&lt;!&ndash;                    <option value="ROLE_ADMIN">ROLE_ADMIN</option>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <option value=""></option>&ndash;&gt;-->
 
-                </select>
-                </div>
-            </div>
+<!--                </select>-->
+<!--                </div>-->
+<!--            </div>-->
 
             <!--              SUBMIT -->
             <button  type="submit" id="submitButton" class="w-50 btn form-button ml-5 mr-5">Opdater Bruger</button>

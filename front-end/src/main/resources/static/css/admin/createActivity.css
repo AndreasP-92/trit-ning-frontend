@@ -1,3 +1,12 @@
+#warning {
+  background-color: #ff5050;
+  text-align: center;
+  border-radius: 10% !important;
+  width: 50%;
+  margin: 5% auto 5% auto;
+  color: white;
+}
+
 .container {
   margin-top: 25px;
 }

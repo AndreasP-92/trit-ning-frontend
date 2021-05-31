@@ -90,6 +90,9 @@
 .indexPage .principles img {
   width: 30%;
 }
+.indexPage .figureImg {
+  width: 100%;
+}
 .indexPage .polaroid {
   background-color: #21f322 !important;
   padding-top: 5%;
@@ -97,6 +100,9 @@
   color: black;
   margin-bottom: -5%;
   height: 700px;
+}
+.indexPage .polaroid .figureImg {
+  width: 100%;
 }
 .indexPage .polaroid img {
   width: 100%;

@@ -144,6 +144,9 @@
   //  transition: height 3s, width 3s;
 
   //}
+  .figureImg{
+    width:100%;
+  }
   .polaroid{
     background-color: #21f322!important;
     padding-top: 5%;
@@ -151,6 +154,9 @@
     color:black;
     margin-bottom: -5%;
     height:700px;
+      .figureImg{
+        width:100%;
+      }
       img{
         width:100%;
       }

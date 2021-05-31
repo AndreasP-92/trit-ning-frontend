@@ -3,4 +3,9 @@
   margin-left: 5%;
 }
 
+#warning {
+  background-color: #ff5050;
+  border-radius: 25px;
+}
+
 /*# sourceMappingURL=viewActivities.css.map */

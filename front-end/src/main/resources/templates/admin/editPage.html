@@ -25,13 +25,17 @@
 
 <main class="container">
     <form class="formbody w-75 mt-5 " id="thisForm" novalidate>
+        <div id="warning"></div>
+        <input type="text" id="bannerImgName" disabled>
+        <input type="text" id="imgName" disabled>
+
         <div class="form-group">
             <label for="title">Emne</label>
             <input type="text" class="form-control" id="title">
         </div>
         <div>
             <label for="banner">Indsæt banner billede</label>
-            <input type="file" class="form-control" id="banner">
+            <input type="file" class="form-control" id="banner" required>
         </div>
         <div>
             <label for="img">Indsæt Billede</label>

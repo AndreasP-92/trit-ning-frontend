@@ -8,6 +8,10 @@ const displayImage  = document.getElementById('displayImage')
 const formData      = new FormData();
 const formData2     = new FormData();
 
+thePath = window.location.pathname;
+const urlId = thePath.substring(thePath.lastIndexOf('/')+1)
+
+const GetPageUrl = `http://localhost:5002/select/activity/${urlId}`;
 
 // ============ GET IMAGE EVENT LISTENER ==========
 
@@ -50,7 +54,10 @@ thisForm.addEventListener('submit',async function (e) {
 async function insertImage (data){
     formData.append("imageFile", img.files[0]);
     formData.append("author_id", "0")
+    formData.append("blog_id", "0")
+    formData.append("about_id", "0")
     formData.append("page_id", data.id)
+
 
     // console.log(formData.get("imageFile"))
     console.log(img.files[0]);
@@ -78,6 +85,8 @@ async function insertImage (data){
 async function insertBannerImage(data){
     formData2.append("imageFile", bannerImg.files[0]);
     formData2.append("author_id", "0")
+    formData2.append("blog_id", "0")
+    formData2.append("about_id", "0")
     formData2.append("page_id", data.id)
 
 
@@ -131,14 +140,14 @@ async function insertPage(){
             }
             return Promise.reject(response);
         }).then(function (data) {
-            insertBannerImage(data)
-            insertImage(data)
-            console.log("AFTER INSERT=========", data.author)
+        insertBannerImage(data)
+        insertImage(data)
+        console.log("AFTER INSERT=========", data.author)
 
-            // window.location.href = "/admin/index"
-        }).catch(function (error) {
-            console.warn('Something went wrong.', error);
-        });
+        // window.location.href = "/admin/index"
+    }).catch(function (error) {
+        console.warn('Something went wrong.', error);
+    });
 
 }
 

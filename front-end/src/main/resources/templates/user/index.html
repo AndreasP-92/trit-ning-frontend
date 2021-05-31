@@ -3,7 +3,6 @@
 
 <head>
     <link rel="alternate" type="application/json+oembed" href="https://codepen.io/api/oembed?url=https%3A%2F%2Fcodepen.io%2Fdoodlemarks%2Fpen%2FaFcly&format=json" title="Very Simple Slider" />
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
@@ -161,41 +160,39 @@
     <!--            THIRD ROW -->
 
     <div class="statements col-sm-12" align="center">
-        <div class="row w-50">
+        <div class="row w-50" id="review">
 
-            <div class="col-sm">
-                <figure>
-                    <img src="/images/ulla.png">
-                    <figcaption>
-                        <p>Ulla Engell</p>
-                    </figcaption>
-                </figure>
-                <p>"Kim har en stor ære i, at jeg nu synes, at svømning er sjovt  Med sine store pædagogiske evner, har Kim tålmodigt lært mig at svømme hurtigere<span id="dots">...</span><span id="more"> Jeg vil fortsætte med bede Kim om hjælp til forbedre min svømning  Jeg kan absolut anbefale Kim, hvis du har brug for en træner - ikke kun til svømning men til triatlon generelt."</span></p>
-                <button onclick="myFunction()" id="myBtn">Læs mere</button>
-            </div>
+<!--            <div class="col-sm">-->
+<!--                <figure>-->
+<!--                    <img src="/images/ulla.png">-->
+<!--                    <figcaption>-->
+<!--                        <p>Ulla Engell</p>-->
+<!--                    </figcaption>-->
+<!--                </figure>-->
+<!--                <p>"Kim har en stor ære i, at jeg nu synes, at svømning er sjovt  Med sine store pædagogiske evner, har Kim tålmodigt lært mig at svømme hurtigere<span id="dots">...</span><span id="more"> Jeg vil fortsætte med bede Kim om hjælp til forbedre min svømning  Jeg kan absolut anbefale Kim, hvis du har brug for en træner - ikke kun til svømning men til triatlon generelt."</span></p>-->
+<!--                <button onclick="myFunction()" id="myBtn">Læs mere</button>-->
+<!--            </div>-->
+<!--            <div class="col-sm">-->
+<!--                <figure>-->
+<!--                    <img src="/images/ulla.png">-->
+<!--                    <figcaption>-->
+<!--                        <p>Casper</p>-->
+<!--                    </figcaption>-->
+<!--                </figure>-->
+<!--                <p>"Kim har en stor ære i, at jeg nu synes, at svømning er sjovt  Med sine store pædagogiske evner, har Kim tålmodigt lært mig at svømme hurtigere. Jeg vil fortsætte med bede Kim om hjælp til forbedre min svømning  Jeg kan absolut anbefale Kim, hvis du har brug for en træner - ikke kun til svømning men til triatlon generelt."</p>-->
 
-            <h1></h1>
-            <div class="col-sm">
-                <figure>
-                    <img src="/images/ulla.png">
-                    <figcaption>
-                        <p>Casper</p>
-                    </figcaption>
-                </figure>
-                <p>"Kim har en stor ære i, at jeg nu synes, at svømning er sjovt  Med sine store pædagogiske evner, har Kim tålmodigt lært mig at svømme hurtigere. Jeg vil fortsætte med bede Kim om hjælp til forbedre min svømning  Jeg kan absolut anbefale Kim, hvis du har brug for en træner - ikke kun til svømning men til triatlon generelt."</p>
-
-            </div>
-            <h1></h1>
-            <div class="col-sm">
-                <figure>
-                    <img src="/images/ulla.png">
-                    <figcaption>
-                        <p>Simon</p>
-                    </figcaption>
-                </figure>
-                <p>"Kim har en stor ære i, at jeg nu synes, at svømning er sjovt  Med sine store pædagogiske evner, har Kim tålmodigt lært mig at svømme hurtigere. Jeg vil fortsætte med bede Kim om hjælp til forbedre min svømning  Jeg kan absolut anbefale Kim, hvis du har brug for en træner - ikke kun til svømning men til triatlon generelt."</p>
-            </div>
-            <h1></h1>
+<!--            </div>-->
+<!--            <h1></h1>-->
+<!--            <div class="col-sm">-->
+<!--                <figure>-->
+<!--                    <img src="/images/ulla.png">-->
+<!--                    <figcaption>-->
+<!--                        <p>Simon</p>-->
+<!--                    </figcaption>-->
+<!--                </figure>-->
+<!--                <p>"Kim har en stor ære i, at jeg nu synes, at svømning er sjovt  Med sine store pædagogiske evner, har Kim tålmodigt lært mig at svømme hurtigere. Jeg vil fortsætte med bede Kim om hjælp til forbedre min svømning  Jeg kan absolut anbefale Kim, hvis du har brug for en træner - ikke kun til svømning men til triatlon generelt."</p>-->
+<!--            </div>-->
+<!--            <h1></h1>-->
         </div>
     </div>
 
@@ -206,8 +203,5 @@
 <div th:replace="fragments/footer :: footerFragment"></div>
 
 </body>
-<link href="/css/user/instagram.css" type="text/css" rel="stylesheet">
-<script src="/js/index.js"></script>
-<script src="/js/user/indexGallery.js"></script>
-<script src="/js/user/instagram.js"></script>
+<script src="/js/user/index.js"></script>
 </html>
