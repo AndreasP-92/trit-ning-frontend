@@ -19,7 +19,7 @@ async function insertImage(data){
     formData.append("blog_id", "0")
     formData.append("about_id", data.id)
 
-    console.log(img.files[0]);
+    console.log(aboutImg.files[0]);
 
     const URL = "http://localhost:5002/image/upload"
 
@@ -48,7 +48,7 @@ async function insertImage(data){
 
                 'title'      : title.value,
                 'description': description.value,
-                'aboutImg'   : img.files[0].name,
+                'aboutImg'   : aboutImg.files[0].name,
             }),
             headers: {
                 'Content-type': 'application/json'
