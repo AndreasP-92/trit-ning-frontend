@@ -167,6 +167,7 @@ function updateImage(imgData){
     formData.append("review_id", imgData.review.id)
     formData.append("author_id", "0")
     formData.append("page_id", "0")
+    formData.append("blog_id", "0")
 
     const URL2 = "http://localhost:5002/image/update"
 

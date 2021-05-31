@@ -1,12 +1,12 @@
 const thisForm      = document.getElementById('thisForm');
 const title         = document.getElementById('title');
-const bannerImg     = document.getElementById('bannerImg');
+// const bannerImg     = document.getElementById('bannerImg');
 const img           = document.getElementById('img');
 const editorCopy    = document.getElementById('editorCopy');
 const getImage      = document.getElementById('getImage')
 const displayImage  = document.getElementById('displayImage')
 const formData      = new FormData();
-const formData2     = new FormData();
+// const formData2     = new FormData();
 
 thePath = window.location.pathname;
 const urlId = thePath.substring(thePath.lastIndexOf('/')+1)
@@ -82,35 +82,35 @@ async function insertImage (data){
 }
 
 // ============ INSERT BANNER IMG FUNC
-async function insertBannerImage(data){
-    formData2.append("imageFile", bannerImg.files[0]);
-    formData2.append("author_id", "0")
-    formData2.append("blog_id", "0")
-    formData2.append("about_id", "0")
-    formData2.append("page_id", data.id)
-
-
-    // console.log(formData.get("imageFile"))
-    console.log(bannerImg.files[0]);
-
-    const URL1 = "http://localhost:5002/image/upload"
-
-    const requestOptions = {
-        'content-type': 'multipart/form-data',
-        method: 'POST',
-        redirect: 'follow',
-        body: formData2
-
-    };
-
-    fetch(URL1, requestOptions)
-        .then(function (response) {
-            console.log(response);
-        })
-        .catch(function (response) {
-            console.log(response);
-        });
-}
+// async function insertBannerImage(data){
+//     formData2.append("imageFile", bannerImg.files[0]);
+//     formData2.append("author_id", "0")
+//     formData2.append("blog_id", "0")
+//     formData2.append("about_id", "0")
+//     formData2.append("page_id", data.id)
+//
+//
+//     // console.log(formData.get("imageFile"))
+//     console.log(bannerImg.files[0]);
+//
+//     const URL1 = "http://localhost:5002/image/upload"
+//
+//     const requestOptions = {
+//         'content-type': 'multipart/form-data',
+//         method: 'POST',
+//         redirect: 'follow',
+//         body: formData2
+//
+//     };
+//
+//     fetch(URL1, requestOptions)
+//         .then(function (response) {
+//             console.log(response);
+//         })
+//         .catch(function (response) {
+//             console.log(response);
+//         });
+// }
 
 // ============ INSERT PAGE FUNC
 async function insertPage(){
@@ -123,7 +123,7 @@ async function insertPage(){
 
             'title'         : title.value,
             'description'   : editorCopy.value,
-            'banner'        : bannerImg.files[0].name,
+            // 'banner'        : bannerImg.files[0].name,
             'img'           : img.files[0].name,
 
         }),
@@ -140,7 +140,7 @@ async function insertPage(){
             }
             return Promise.reject(response);
         }).then(function (data) {
-        insertBannerImage(data)
+        // insertBannerImage(data)
         insertImage(data)
         console.log("AFTER INSERT=========", data.author)
 
@@ -168,7 +168,8 @@ async function getPages (){
             console.log("Findes allerede")
             document.getElementById('alreadyExists').innerHTML = "Aktivitet Eksistere allerede";
         }).catch(async function(e){
+        insertPage();
+
         console.log(e)
-        await insertPage();
     })
 }

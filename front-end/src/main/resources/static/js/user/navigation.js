@@ -1,9 +1,7 @@
-const title = document.getElementById('title');
-
 getActivity()
 
 function getActivity(){
-    const pagesURL = `http://localhost:5002/select/activities`;
+    const pagesURL = `http://localhost:5002/ui/select/activities`;
     const requestOptions ={
         'content-type': 'application/json',
         method: 'GET',
@@ -36,7 +34,7 @@ console.log(item)
     let a = document.createElement('a');
     a.textContent = item.title;
     a.setAttribute('class', 'nav-link text-truncate')
-    a.setAttribute('href', `/page/${item.title}`)
+    a.setAttribute('href', `/page/${item.id}`)
     li.appendChild(a)
 }
 

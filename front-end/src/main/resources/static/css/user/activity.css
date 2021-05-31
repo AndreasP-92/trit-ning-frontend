@@ -19,7 +19,8 @@
 }
 
 .cycleimage{
-    width: 100%;
+    width: 35%;
+    display: block;
 }
 
 .runimage{

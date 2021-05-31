@@ -18,7 +18,7 @@ public class MainController {
         return "user/blog";
     }
 
-    @GetMapping("/blog/{blogpost}")
+    @GetMapping("/blog/{id}")
     public String blogPost() {
         return "user/blogPost";
     }

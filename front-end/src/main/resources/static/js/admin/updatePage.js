@@ -1,14 +1,14 @@
 const thisForm      = document.getElementById('thisForm');
 const title         = document.getElementById('title');
-const banner        = document.getElementById('banner');
-const bannerImgName = document.getElementById('bannerImgName')
+// const banner        = document.getElementById('banner');
+// const bannerImgName = document.getElementById('bannerImgName')
 const img           = document.getElementById('img');
 const imgName       = document.getElementById('imgName');
 const editor        = document.getElementById('editor');
 const editorCopy    = document.getElementById('editorCopy');
 const warning       = document.getElementById('warning')
 
-const formData      = new FormData();
+// const formData      = new FormData();
 const formData2     = new FormData();
 
 // ======== INITIALIZE PAGE DATA ===========
@@ -45,7 +45,7 @@ function initPageData(){
 function insertPageData(data){
     title.value = data.title;
     editor.innerHTML = data.description;
-    bannerImgName.value = data.banner;
+    // bannerImgName.value = data.banner;
     imgName.value = data.img;
     console.log(data.description)
 }
@@ -54,12 +54,9 @@ function insertPageData(data){
 thisForm.addEventListener('submit',async function (e) {
     e.preventDefault();
 
-    if(banner.files[0] === undefined || img.files[0] === undefined || title.value === ""){
+    if(img.files[0] === undefined || title.value === "") {
         warning.textContent = "Udfyld alle felter"
-    }if(banner.files[0].name == img.files[0].name){
-        warning.textContent = "Billederne må ikke være ens"
-    }
-    else{
+    }else{
         warning.setAttribute("style", "display:none;")
         await updateActivity();
     }
@@ -68,13 +65,13 @@ thisForm.addEventListener('submit',async function (e) {
 
 // ======== UPDATE ACTIVITY DATA ===========
 async function updateActivity() {
-    let checkBannerImg  = true;
+    // let checkBannerImg  = true;
     let checkImg        = true;
 
 
-    if(banner.files[0] === undefined){
-        checkBannerImg = false;
-    }
+    // if(banner.files[0] === undefined){
+    //     checkBannerImg = false;
+    // }
     if(img.files[0] === undefined){
         checkImg = false;
     }
@@ -87,7 +84,7 @@ async function updateActivity() {
             body: JSON.stringify({
 
                 'title': title.value,
-                'banner': banner.files[0].name,
+                // 'banner': banner.files[0].name,
                 'img': img.files[0].name,
 
             }),
@@ -104,7 +101,7 @@ async function updateActivity() {
 
                 'title': title.value,
                 'description': editorCopy.value,
-                'banner': banner.files[0].name,
+                // 'banner': banner.files[0].name,
                 'img': img.files[0].name,
 
             }),
@@ -128,12 +125,12 @@ async function updateActivity() {
 
 
 // UPDATE BANNER IMAGE ===
-        if(checkBannerImg == true){
-            getBannerImg().then(bannerResponse => {
-                console.log("GET BANNER IMG ======", bannerResponse)
-                updateBannerImg(bannerResponse)
-            })
-        }
+//         if(checkBannerImg == true){
+//             getBannerImg().then(bannerResponse => {
+//                 console.log("GET BANNER IMG ======", bannerResponse)
+//                 updateBannerImg(bannerResponse)
+//             })
+//         }
 
 // UPDATE IMAGE ===
         if(checkImg == true){
@@ -144,38 +141,39 @@ async function updateActivity() {
         }
 
 // SUCCESS ===========
-        window.location.href = "/admin/index"
+//         window.location.href = "/admin/index"
     }).catch(function (error) {
         console.warn('Something went wrong.', error);
     });
 }
 
 // ======== FETCH BANNER IMG DATA ===========
-function getBannerImg(){
-    let fetchImage = initPageData().then(pageData =>{
-        let init = {
-            method: "GET",
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-            }
-        }
-
-        return fetch(`http://localhost:5002/image/get/imageid/${bannerImgName.value}/${pageData.id}`,init)
-            .then((response) => response.json())
-            .then((responseData) => {
-                console.log(responseData);
-                return responseData;
-            })
-            .catch(error => console.warn(error));
-    })
-    return fetchImage;
-}
+// function getBannerImg(){
+//     let fetchImage = initPageData().then(pageData =>{
+//         let init = {
+//             method: "GET",
+//             headers: {
+//                 'Accept': 'application/json',
+//                 'Content-Type': 'application/json',
+//             }
+//         }
+//
+//         return fetch(`http://localhost:5002/image/get/reviewImage/${bannerImgName.value}/${pageData.id}`,init)
+//             .then((response) => response.json())
+//             .then((responseData) => {
+//                 console.log(responseData);
+//                 return responseData;
+//             })
+//             .catch(error => console.warn(error));
+//     })
+//     return fetchImage;
+// }
 
 // ======== FETCH IMG DATA ===========
 function getImg(){
     console.log("=========== GET IMAGE FETCH RUN ===========")
     let fetchImage = initPageData().then(pageData =>{
+        console.log("PAGEDATA LOOKING FOR ID ==========",pageData)
         let init = {
             method: "GET",
             headers: {
@@ -183,8 +181,8 @@ function getImg(){
                 'Content-Type': 'application/json',
             }
         }
-
-        return fetch(`http://localhost:5002/image/get/imageid/${imgName.value}/${pageData.id}`,init)
+        console.log()
+        return fetch(`http://localhost:5002/image/get/imageid/${imgName.value}/${pageData.id}/page`,init)
             .then((response) => response.json())
             .then((responseData) => {
                 console.log("IMAGE FETCH=========",responseData);
@@ -194,33 +192,33 @@ function getImg(){
     })
     return fetchImage;
 }
-
-// ======== UPDATE BANNER IMG ===========
-function updateBannerImg(bannerImgData){
-    console.log("UPDATE BANNER DATA ====",bannerImgData)
-    formData.append("imageFile", banner.files[0]);
-    formData.append("image_id", bannerImgData.id)
-    formData.append("page_id", bannerImgData.pages.id)
-    formData.append("author_id", "0")
-
-    const URL1 = "http://localhost:5002/image/update"
-
-    const requestOptions = {
-        'content-type': 'multipart/form-data',
-        method: 'POST',
-        redirect: 'follow',
-        body: formData
-
-    };
-
-    fetch(URL1, requestOptions)
-        .then(function (response) {
-            console.log(response);
-        })
-        .catch(function (response) {
-            console.log(response);
-        });
-}
+//
+// // ======== UPDATE BANNER IMG ===========
+// function updateBannerImg(bannerImgData){
+//     console.log("UPDATE BANNER DATA ====",bannerImgData)
+//     formData.append("imageFile", banner.files[0]);
+//     formData.append("image_id", bannerImgData.id)
+//     formData.append("page_id", bannerImgData.pages.id)
+//     formData.append("author_id", "0")
+//
+//     const URL1 = "http://localhost:5002/image/update"
+//
+//     const requestOptions = {
+//         'content-type': 'multipart/form-data',
+//         method: 'POST',
+//         redirect: 'follow',
+//         body: formData
+//
+//     };
+//
+//     fetch(URL1, requestOptions)
+//         .then(function (response) {
+//             console.log(response);
+//         })
+//         .catch(function (response) {
+//             console.log(response);
+//         });
+// }
 
 // ======== UPDATE IMG ===========
 function updateImage(imgData){
@@ -231,6 +229,8 @@ function updateImage(imgData){
     formData2.append("image_id", imgData.id)
     formData2.append("page_id", imgData.pages.id)
     formData2.append("author_id", "0")
+    formData2.append("review_id", "0")
+    formData2.append("blog_id", "0")
 
     const URL2 = "http://localhost:5002/image/update"
 

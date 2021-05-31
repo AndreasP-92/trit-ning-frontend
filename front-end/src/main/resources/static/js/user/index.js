@@ -63,7 +63,7 @@ function insertPageData(item){
 
     // ==== DIV3 =====
     let div03 = document.createElement('div');
-    div02.setAttribute('class', 'col-sm')
+    div02.setAttribute('class', 'col-sm-4')
     figure.appendChild(div03);
 
 // ======== GET IMAGE FUNCTION ===========
@@ -89,7 +89,7 @@ function insertPageData(item){
 
     // ==== P2 =====
     let p02 = document.createElement('p')
-    p02.textContent = item.review.description;
+    p02.innerHTML = item.review.description;
     div02.appendChild(p02)
 
     // ==== BUTOON =====
@@ -117,20 +117,4 @@ function getImg(reviewData){
             return responseData;
         })
         .catch(error => console.warn(error));
-    //
-    // fetch(URL2, requestOptions)
-    //     .then(response => {
-    //         if (!response.ok) {
-    //             throw new Error('Network response was not ok');
-    //         }
-    //         return response.blob();
-    //     })
-    //     .then(data => {
-    //
-    //         console.log(data)
-    //         displayImage.src = URL.createObjectURL(data);
-    //     })
-    //     .catch(error => {
-    //         console.error('There has been a problem with your fetch operation:', error);
-    //     });
 }
