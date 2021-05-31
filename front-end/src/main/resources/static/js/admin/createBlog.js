@@ -97,7 +97,6 @@ async function getBlog (){
         .then(response => response.json())
         .then(data => {
             console.log(data)
-
             console.log("Findes allerede")
             document.getElementById('alreadyExists').innerHTML = "Blog Eksistere allerede";
         }).catch(async function(e){
