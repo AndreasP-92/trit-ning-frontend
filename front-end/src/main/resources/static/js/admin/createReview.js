@@ -36,7 +36,7 @@ async function insertReview(){
 
         console.log("AFTER INSERT=========", data.author)
 
-        // window.location.href = "/admin/index"
+        window.location.href = "/admin/view/page"
     }).catch(function (error) {
         console.warn('Something went wrong.', error);
     });

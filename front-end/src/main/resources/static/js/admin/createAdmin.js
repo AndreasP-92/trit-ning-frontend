@@ -38,6 +38,7 @@ async function insertUser(){
         return Promise.reject(response);
     }).then(function (data) {
         console.log(data)
+        window.location.href = "/admin/view/admins"
     }).catch(function (error) {
         console.warn('Something went wrong.', error);
 

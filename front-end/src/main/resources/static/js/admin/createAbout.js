@@ -64,7 +64,7 @@ async function insertImage(data){
             console.log("AFTER INSERT=========", data.title)
             console.log(data)
 
-            // window.location.href = "/admin/index"
+            window.location.href = "/admin/view/pages"
         }).catch(function (error) {
             console.warn('Something went wrong.', error);
         });

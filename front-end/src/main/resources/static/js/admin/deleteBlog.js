@@ -50,6 +50,7 @@ function fillTbody(item, index) {
     // === CREATE a ===
     let a = document.createElement('a');
     a.setAttribute('class', 'mt-3 w-10 btn btn-info');
+    a.href = "/admin/edit/blog/"+ item.title;
     a.textContent = "Rediger Blog";
     td.appendChild(a);
 
@@ -63,7 +64,6 @@ function fillTbody(item, index) {
 
 function deleteBlog(id) {
     if (confirm("Vil du slette siden ?")) {
-        // alert("test")
         const requestOptions = {
             'content-type': 'application/json',
             method: 'DELETE',
@@ -79,7 +79,6 @@ function deleteBlog(id) {
                 window.location.href = "/admin/view/blogpost"
 
             });
-    } else {
     }
 
 }

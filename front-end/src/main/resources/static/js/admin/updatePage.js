@@ -144,7 +144,7 @@ async function updateActivity() {
         }
 
 // SUCCESS ===========
-//         window.location.href = "/admin/index"
+        window.location.href = "/admin/view/page"
     }).catch(function (error) {
         console.warn('Something went wrong.', error);
     });

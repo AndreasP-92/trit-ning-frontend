@@ -78,7 +78,7 @@ async function insertBlog() {
         console.log("AFTER INSERT=========",data.title)
         console.log(data)
 
-        // window.location.href = "/admin/index"
+        window.location.href = "/admin/view/blogpost"
     }).catch(function (error) {
         console.warn('Something went wrong.', error);
     });

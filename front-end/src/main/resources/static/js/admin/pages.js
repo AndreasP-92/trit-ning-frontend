@@ -156,9 +156,8 @@ function deleteReview(id) {
             .then(data => {
             })
             .catch(err => {
-                // window.location.href = "/admin/view/pages"
+                window.location.href = "/admin/view/pages"
             });
-    } else {
     }
 }
 
