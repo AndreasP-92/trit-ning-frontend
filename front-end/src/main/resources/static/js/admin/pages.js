@@ -1,5 +1,4 @@
 const editor        = document.getElementById('editor');
-const deleteButton  = document.getElementById('deleteButton')
 const author        = document.getElementById("author");
 const editorCopy    = document.getElementById("editorCopy");
 
@@ -131,40 +130,35 @@ function fillTbodyReview(item, index) {
     // === CREATE a ===
     let a = document.createElement('a');
     a.setAttribute('class', 'mt-3 w-10 btn btn-info');
-    a.textContent = "Rediger";
+    a.href = "/admin/edit/review/"+ item.id;
+    a.textContent = "Rediger Udtalelse";
     td.appendChild(a);
 
-    // === CREATE deleteButton ===
-    let deleteButton = document.createElement('button');
-    deleteButton.setAttribute('class', 'mt-3 w-10 btn btn-danger');
-    deleteButton.setAttribute("onclick", `deleteReview(${item.id})`);
-    deleteButton.textContent = "slet";
-    td.appendChild(deleteButton);
+    // === CREATE a1 ===
+    let a1 = document.createElement('a');
+    a1.setAttribute('class', 'mt-3 w-10 btn btn-danger');
+    a1.setAttribute("onclick", `deleteReview(${item.id})`);
+    a1.textContent = "Slet";
+    td.appendChild(a1);
 }
 
 function deleteReview(id) {
     if (confirm("vil du slette udtalelsen ?")){
-        fetch(`http://localhost:5002/delete/review/${id}`, {
+        const requestOptions = {
+            'content-type': 'application/json',
             method: 'DELETE',
-            body: JSON.stringify({
-                'author': author.value,
-            }),
-            headers: {
-                'Content-type': 'application/json'
-            }
-        }).then(function (response) {
-            if (response.ok) {
-                return response.json()
-            }
-            return Promise.reject(response);
-        }).then(function (data) {
-            console.log("AFTER INSERT=========", data.author)
-            console.log(data)
-
-        }).catch(function (error) {
-            console.warn('Something went wrong.', error)
-            window.location.href = "/admin/view/pages"
-        });
+            redirect: 'follow'
+        };
+        const delReviewUrl = `http://localhost:5002/delete/review/${id}`
+        console.log(id)
+        fetch(delReviewUrl,requestOptions)
+            .then(res => res.json())
+            .then(data => {
+            })
+            .catch(err => {
+                // window.location.href = "/admin/view/pages"
+            });
+    } else {
     }
 }
 
