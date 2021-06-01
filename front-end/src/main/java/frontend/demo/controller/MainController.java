@@ -94,7 +94,7 @@ public class MainController {
         return "admin/createPage";
     }
 
-    @GetMapping("/admin/edit/page/{title}")
+    @GetMapping("/admin/edit/page/{id}")
     public String adminEditPage() {
 
         return "admin/editPage";

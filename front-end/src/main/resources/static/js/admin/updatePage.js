@@ -7,6 +7,7 @@ const imgName       = document.getElementById('imgName');
 const editor        = document.getElementById('editor');
 const editorCopy    = document.getElementById('editorCopy');
 const warning       = document.getElementById('warning')
+const pageId        = document.getElementById('pageId')
 
 // const formData      = new FormData();
 const formData2     = new FormData();
@@ -20,11 +21,11 @@ initPageData().then(data =>{
 // ======== GET PAGE DATA ===========
 function initPageData(){
     let thePath = window.location.pathname;
-    const urlTitle = thePath.substring(thePath.lastIndexOf('/')+1)
+    const id = thePath.substring(thePath.lastIndexOf('/')+1)
 
-    const GetPageUrl = `http://localhost:5002/select/page/${urlTitle}`;
+    const GetPageUrl = `http://localhost:5002/select/one/activity/${id}`;
 
-    console.log(urlTitle)
+    console.log(id)
 
     const requestOptions = {
         'content-type': 'application/json',
@@ -43,6 +44,7 @@ function initPageData(){
 
 // ========= INSERT PAGE DATA
 function insertPageData(data){
+    pageId.value = data.id;
     title.value = data.title;
     editor.innerHTML = data.description;
     // bannerImgName.value = data.banner;
@@ -82,10 +84,10 @@ async function updateActivity() {
         init = {
             method: 'PUT',
             body: JSON.stringify({
-
-                'title': title.value,
+                'id'    : pageId.value,
+                'title' : title.value,
                 // 'banner': banner.files[0].name,
-                'img': img.files[0].name,
+                'img'   : img.files[0].name,
 
             }),
             headers: {
@@ -99,10 +101,11 @@ async function updateActivity() {
             method: 'PUT',
             body: JSON.stringify({
 
-                'title': title.value,
+                'id'    : pageId.value,
+                'title' : title.value,
                 'description': editorCopy.value,
                 // 'banner': banner.files[0].name,
-                'img': img.files[0].name,
+                'img'   : img.files[0].name,
 
             }),
             headers: {

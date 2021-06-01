@@ -2,7 +2,7 @@ const thisForm      = document.getElementById('thisForm');
 const title         = document.getElementById('title');
 // const bannerImg     = document.getElementById('bannerImg');
 const img           = document.getElementById('img');
-const editorCopy    = document.getElementById('editorCopy');
+const description   = document.getElementById('editorCopy');
 const getImage      = document.getElementById('getImage')
 const displayImage  = document.getElementById('displayImage')
 const formData      = new FormData();
@@ -114,7 +114,7 @@ async function insertImage (data){
 
 // ============ INSERT PAGE FUNC
 async function insertPage(){
-
+console.log(editorCopy.value)
     let url = 'http://localhost:5002/insert/page'
     let requestOptions = {
         method: 'POST',
@@ -125,6 +125,7 @@ async function insertPage(){
             'description'   : editorCopy.value,
             // 'banner'        : bannerImg.files[0].name,
             'img'           : img.files[0].name,
+
 
         }),
         headers: {
@@ -168,7 +169,7 @@ async function getPages (){
             console.log("Findes allerede")
             document.getElementById('alreadyExists').innerHTML = "Aktivitet Eksistere allerede";
         }).catch(async function(e){
-        insertPage();
+        await insertPage();
 
         console.log(e)
     })

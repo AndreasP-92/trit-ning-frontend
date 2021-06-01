@@ -4,7 +4,7 @@ const author        = document.getElementById("author");
 const editorCopy    = document.getElementById("editorCopy");
 
 //    ==================================================== GET ACTIVITY ================================================
-const myUrl = `http://localhost:5002/select/pages`;
+const myUrl = `http://localhost:5002/select/page`;
 
 const requestOptions = {
      'content-type': 'application/json',
@@ -16,7 +16,7 @@ fetch(myUrl, requestOptions)
     .then(response => response.json())
     .then(data => {
         gotPageData(data)
-
+        console.log(data)
     }).catch(async function(e){
         console.log(e);
     })
@@ -54,6 +54,7 @@ function fillTbody(item, index) {
     // === CREATE a ===
     let a = document.createElement('a');
     a.setAttribute('class', 'mt-3 w-10 btn btn-info');
+    a.href = "/admin/edit/page/"+ item.id;
     a.textContent = "Rediger Side";
     td.appendChild(a);
 
@@ -79,7 +80,7 @@ function deletePage(id) {
             .then(data => {
             })
             .catch(err => {
-                window.location.href = "/admin/view/pages"
+                // window.location.href = "/admin/view/pages"
             });
     } else {
     }

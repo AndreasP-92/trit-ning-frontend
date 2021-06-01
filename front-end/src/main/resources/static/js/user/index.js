@@ -1,3 +1,4 @@
+myFunction()
 
 function myFunction() {
     var dots = document.getElementById("dots");
